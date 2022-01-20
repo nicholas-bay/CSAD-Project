@@ -12,7 +12,8 @@
 > 2. In terminal, ```cd PATH & git clone https://github.com/nicholas-bay/CSAD-Project.git```
 >
 > If you want to pull code from github
-> - delete local code and repeat step as if you lost your code
+> 1. In terminal, ```git pull origin main```
+> 2. delete local code and repeat step as if you lost your code
 >
 > If you want to upload file to github
 > 1. Copy absolute path of file
