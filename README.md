@@ -22,6 +22,8 @@
 > If you want to upload the whole code to github
 > - In terminal, `git add --all & git commit -m "MESSAGE" & git push`
 ## Getting Started with Create React App
+> Download [Node.js](https://nodejs.org/en/download/)
+> In terminal, `cd .. && npx create-react-app;`
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Available Scripts
 In the project directory, you can run:
