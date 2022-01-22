@@ -1,18 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Icon for website on desktop-->
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <!-- Icon for website on mobile devices -->
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!-- /public/menifest.json file to configure type of icon based on devices -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>CSAD Project</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-  </body>
+
+<head>
+	<title>CSAD Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- Icon for website on desktop-->
+	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+	<!-- Icon for website on mobile devices -->
+	<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+	<!-- /public/menifest.json file to configure type of icon based on devices -->
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+	<!-- Bootstrap CDN CSS -->
+	<link rel="stylesheet" 
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+		crossorigin="anonymous" />
+	<!-- Bootstrap CDN JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+		crossorigin="anonymous">
+	</script>
+	<!-- Bootstrap CDN JS Bundle -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous">
+	</script>
+	<!-- Owl-carousel CDN -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+		integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw="
+		crossorigin="anonymous" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+		integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw="
+		crossorigin="anonymous" />
+	<!-- font awesome icons -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+		integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+		crossorigin="anonymous" />
+	<!-- Custom CSS file -->
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<header style="position: sticky; top: 0dp;">
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<a class="navbar-brand" href="#">Shopee</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Seller Centre</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Sell on Shopee</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Download</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link d-flex align-items-center" routerLink="/backoffice/contractors"
+						routerLinkActive="active" style="display:block">
+						<img src="%PUBLIC_URL%/facebook_icon.png" width="20" height="20" alt="">
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link d-flex align-items-center" routerLink="/backoffice/contractors"
+						routerLinkActive="active" style="display:block">
+						<img src="%PUBLIC_URL%/instagram_icon.png" width="20" height="20" alt="">
+					</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="#">Notification</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Help</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+						Language
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Login</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Sign Up</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+</body>
+
 </html>
