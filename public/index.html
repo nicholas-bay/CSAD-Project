@@ -16,16 +16,6 @@
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 		crossorigin="anonymous" />
-	<!-- Bootstrap CDN JS -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
-		crossorigin="anonymous">
-	</script>
-	<!-- Bootstrap CDN JS Bundle -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-		crossorigin="anonymous">
-	</script>
 	<!-- Owl-carousel CDN -->
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
@@ -46,66 +36,125 @@
 
 <body>
 	<noscript>You need to enable JavaScript to run this app.</noscript>
-	<header style="position: sticky; top: 0dp;">
+	<header>
 		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 			<a class="navbar-brand" href="#">Shopee</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
 				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#">Seller Centre</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Sell on Shopee</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Download</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link d-flex align-items-center" routerLink="/backoffice/contractors"
-						routerLinkActive="active" style="display:block">
-						<img src="%PUBLIC_URL%/facebook_icon.png" width="20" height="20" alt="">
-					</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link d-flex align-items-center" routerLink="/backoffice/contractors"
-						routerLinkActive="active" style="display:block">
-						<img src="%PUBLIC_URL%/instagram_icon.png" width="20" height="20" alt="">
-					</a>
-				</li>
-			</ul>
-			<ul class="navbar-nav">
-				<li class="nav-item">
-					<a class="nav-link" href="#">Notification</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Help</a>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">
-						Language
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Login</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Sign Up</a>
-				</li>
-			</ul>
-		</div>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Seller Centre</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Sell on Shopee</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Download</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center" routerLink="/backoffice/contractors"
+							routerLinkActive="active" style="display:block">
+							<img src="%PUBLIC_URL%/facebook_icon.png" width="20" height="20" alt="">
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link d-flex align-items-center" routerLink="/backoffice/contractors"
+							routerLinkActive="active" style="display:block">
+							<img src="%PUBLIC_URL%/instagram_icon.png" width="20" height="20" alt="">
+						</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Notification</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Help</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+							role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							Language
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Sign Up</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	</header>
+	<main role="main">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			</ol>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="%PUBLIC_URL%/iphone13.png" alt="First slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="%PUBLIC_URL%/rtx3090.jpg" alt="Second slide">
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="%PUBLIC_URL%/arduinouno.jpeg" alt="Third slide">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		<!-- FOOTER -->
+		<footer class="container">
+			<p class="float-right"><a href="#">Back to top</a></p>
+			<p>
+				<b>Developers: </b>Nicholas Bay &middot; Ephraim Yee &middot; Chung Hong Wei &middot; Eugene &emsp;
+				<b>Find us: </b>
+				<a href="#"><img src="%PUBLIC_URL%/facebook_icon.png" width="20" height="20" alt=""></a>
+				&middot;
+				<a href="#"><img src="%PUBLIC_URL%/instagram_icon.png" width="20" height="20" alt=""></a>
+			</p>
+		</footer>
+	</main>
+
+	<!-- ========== Bootstrap core JavaScript ========== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+		integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
 </body>
 
 </html>
