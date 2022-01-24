@@ -1,16 +1,15 @@
 class MyHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <!-- navbar -->
         <style>
             li {margin-left: 20px; margin-right: 20px; }
         </style>
         <navbar class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container">
-                <button class="navbar-toggler" type='button' data-bs-toggle='collapse' data-bs-target='#navmenu'>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu">
                     <span class='navbar-toggler-icon'></span>
                 </button>
-                <div class="collapse navbar-collapse" style='font-size: 13px'>
+                <div class="collapse navbar-collapse" id='navmenu' style='font-size: 13px'>
                     <ul class="navbar-nav mx-auto my-auto">
                         <li class='nav-item' id='navitem'>
                             <a href="#home" class="nav-link">
