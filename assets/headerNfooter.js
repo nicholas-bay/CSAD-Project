@@ -58,7 +58,7 @@ customElements.define(`my-header`, MyHeader)
 class MyFooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <footer class='fixed-bottom' style='background-color: #F5F5F7; padding: 17px 0px 0px'>
+        <footer class='page-footer' style='background-color: #F5F5F7; padding: 17px 0px 0px'>
             <section class='container' id='footer'>
                 <ul style='list-style: none; margin: 0dp;'>
                     <li style='padding-bottom: 0px'>
@@ -79,8 +79,10 @@ class MyFooter extends HTMLElement {
                             letter-spacing: -.01em;
                             font-family: inherit;'>
                             Find Us:
-                            <a href="#"><img src="assets/facebook_icon.png" width="15" height="15" alt=""></a> &middot;
-                            <a href="#"><img src="assets/instagram_icon.png" width="15" height="15" alt=""></a>
+                            <a href="#" style="color: black"><i class="bi bi-facebook"></i></a> &middot;
+                            <a href="#" style="color: black"><i class="bi bi-instagram"></i></a> &middot;
+                            <a href="#" style="color: black"><i class="bi bi-whatsapp"></i></a> &middot;
+                            <a href="#" style="color: black"><i class="bi bi-youtube"></i></a>
                         </p>
                     </li>
                 </ul>
