@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $username = $password = '';
   // check if form is submitted
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
@@ -22,10 +23,14 @@
       if ($dataset->num_rows > 0) {
         while ($row = $dataset->fetch_assoc()) {
           if ($row['username'] === $username && $row['password'] === $password) {
-            if ($row['type'] === 'buyer')
-              header( 'Location: ../index-buyer.html');
-            else
-              header( 'Location: ../index-seller.html');
+            if ($row['type'] === 'buyer') {
+              $_SESSION['username'] = $username;
+              header( 'Location: ../index-buyer.php');
+            }
+            else {
+              $_SESSION['username'] = $username;
+              header( 'Location: ../index-seller.php');
+            }
           }
         }
       }
@@ -43,8 +48,9 @@
       //     echo "Insertion sucessful";
       // else
       //   echo "Insertion UNSUCCESSFUL: " . $conn->error;
-
-      header('Location: ../index-buyer.html');
+      
+      $_SESSION['username'] = $username;
+      header('Location: ../index-buyer.php');
     }
     
     // check if button pressed is sign up as seller
@@ -60,6 +66,7 @@
       // else
       //   echo "Insertion UNSUCCESSFUL: " . $conn->error;
 
-      header('Location: ../index-seller.html');
+      $_SESSION['username'] = $username;
+      header('Location: ../index-seller.php');
     }
   }

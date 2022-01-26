@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
         <script src=assets/template.js></script>
     </head>
     <body class='pt-5 pb-5'>
-        <user-header></user-header>
+        <?php include("assets/user-header.html") ?>
         <!-- notification -->
         <section class='bg-warning text-light p-5 text-right text-sm-start' id='notifications'>
             <div class="container">
@@ -107,7 +108,7 @@
             New Section
             <hr>
         </section>
-        <main-footer></main-footer>
+        <?php include("assets/footer.html") ?>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

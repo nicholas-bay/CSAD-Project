@@ -18,7 +18,7 @@
 
 <body class='pt-5 pb-5'>
   <?php include("src/createSQL.php") ?>
-  <guest-header></guest-header>
+  <?php include("assets/guest-header.html") ?>
   <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
       <div class="row justify-content-center align-items-center h-100">
@@ -58,7 +58,7 @@
       </div>
     </div>
   </section>
-  <main-footer></main-footer>
+  <?php include("assets/footer.html") ?>
 </body>
 
 </html>

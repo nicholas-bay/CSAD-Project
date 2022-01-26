@@ -57,7 +57,7 @@ class UserHeader extends HTMLElement {
               <!-- person -->
               <li class='nav-item' id='navitem'>
                 <a href="#signuplogin" class="nav-link">
-                  <i class="bi bi-person"></i> <span id='person'></span>
+                  <i class="bi bi-person"></i> test<?php echo $_SESSION['username']; ?>
                 </a>
               </li>
             </ul>
