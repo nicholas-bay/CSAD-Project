@@ -30,5 +30,9 @@
   //   echo "Table sucessful";
   // else
   //   echo "Table UNSUCCESSFUL: " . $conn->error;
+
+  // set admin users
+  $sql = "INSERT INTO $sqltable (username, `password`, `type`)
+    VALUES ('adminbuyer', '123', 'buyer'), ('adminseller', '123', 'seller')";
   
 ?>
