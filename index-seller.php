@@ -17,7 +17,7 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <?php include("assets/user-header.html") ?>
+  <?php include("Templates/user-header.html") ?>
   <!-- add items -->
   <section class='bg-dark text-light p-5 text-right text-sm-start' id='adding'>
     <div class="container">
@@ -92,7 +92,7 @@
     New Section
     <hr>
   </section>
-  <?php include("assets/footer.html") ?>
+  <?php include("Templates/footer.html") ?>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
