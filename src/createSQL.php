@@ -10,7 +10,7 @@
   $conn = new mysqli($sqlservername, $sqlusername, $sqlpassword);
   
   // create database
-  $conn->query("CREATE DATABASE IF NOT EXISTS usersDB");
+  $conn->query("CREATE DATABASE IF NOT EXISTS $sqldatabase");
   
   // recreate connection with database
   $conn = new mysqli($sqlservername, $sqlusername, $sqlpassword, $sqldatabase);
@@ -19,7 +19,8 @@
   $sql = "CREATE TABLE IF NOT EXISTS $sqltable (
     username VARCHAR(50) PRIMARY KEY,
     `password` VARCHAR(50) NOT NULL,
-    `type` VARCHAR(10) NOT NULL)";
+    `type` VARCHAR(10) NOT NULL
+  )";
 
   // 1. without checking
   $conn->query($sql);

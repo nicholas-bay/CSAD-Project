@@ -16,7 +16,19 @@
 
     // check if button pressed is login
     if (isset($_POST['login'])) {
-      
+      $sql = "SELECT username, `password`, `type` FROM $sqltable";
+      $dataset = $conn->query($sql);
+      // run through every row of data
+      if ($dataset->num_rows > 0) {
+        while ($row = $dataset->fetch_assoc()) {
+          if ($row['username'] === $username && $row['password'] === $password) {
+            if ($row['type'] === 'buyer')
+              header( 'Location: ../index-buyer.html');
+            else
+              header( 'Location: ../index-seller.html');
+          }
+        }
+      }
     }
     
     // check if button pressed is sign up as buyer
