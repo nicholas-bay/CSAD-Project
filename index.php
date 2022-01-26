@@ -14,10 +14,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css" />
   <script src=assets/template.js></script>
-  
 </head>
 
 <body class='pt-5 pb-5'>
+  <?php include("src/createSQL.php") ?>
   <guest-header></guest-header>
   <section class="vh-100 gradient-custom">
     <div class="container py-5 h-100">
@@ -26,13 +26,13 @@
           <div class="card shadow-2-strong card-registration bg-warning" style="border-radius: 15px;">
             <div class="card-body p-4 p-md-5">
               <div class="container-fluid">
-                <form>
+                <form method="post" action='src/login_signup.php'>
                   <div class="row pt-2">
                     <div class="col-4 d-flex justify-content-center align-items-center">
                       <label class="form-label">Username:</label>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center">
-                      <input type="text" class="form-control" id="username">
+                      <input type="text" class="form-control" name="username">
                     </div>
                   </div>
                   <div class="row pt-2">
@@ -40,15 +40,14 @@
                       <label class="form-label">Password:</label>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center">
-                      <input type="text" class="form-control" id="password">
+                      <input type="text" class="form-control" name="password">
                     </div>
                   </div>
                   <div class="row pt-2">
-                    <div class="col d-flex justify-content-start align-items-center">
-                    </div>
                     <div class="col d-flex justify-content-end align-items-center">
-                      <button type="submit" class="btn btn-dark" style='border-radius: 10px;'>Sign Up</button>
-                      <button type="submit" class="btn btn-dark" style='border-radius: 10px;'>Login</button>
+                      <button type="submit" class="btn btn-dark" name='signupbuyer' style='border-radius: 10px;'>Sign Up as Buyer</button>
+                      <button type="submit" class="btn btn-dark" name='signupseller' style='border-radius: 10px;'>Sign Up as Seller</button>
+                      <button type="submit" class="btn btn-dark" name='login' style='border-radius: 10px;'>Login</button>
                     </div>
                   </div>
                 </form>
@@ -60,9 +59,6 @@
     </div>
   </section>
   <main-footer></main-footer>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
