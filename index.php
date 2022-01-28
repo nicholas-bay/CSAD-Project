@@ -26,7 +26,7 @@
           <div class="card shadow-2-strong card-registration bg-warning" style="border-radius: 15px;">
             <div class="card-body p-4 p-md-5">
               <div class="container-fluid">
-                <form method="post" action='src/login_signup.php'>
+                <form method="post" action='src/users.php'>
                   <div class="row pt-2">
                     <div class="col-4 d-flex justify-content-center align-items-center">
                       <label class="form-label">Username:</label>

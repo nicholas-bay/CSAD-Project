@@ -1,9 +1,7 @@
 <?php
   session_start();
   $username = $password = '';
-  // check if form is submitted
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    // preset variables
     $sqlservername = 'localhost';
     $sqlusername = 'root';
     $sqlpassword = 'root';
@@ -12,63 +10,36 @@
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // create connection
     $conn = new mysqli($sqlservername, $sqlusername, $sqlpassword, $sqldatabase);
 
-    // check if button pressed is login
     if (isset($_POST['login'])) {
       $sql = "SELECT username, `password`, `type` FROM $sqltable";
       $dataset = $conn->query($sql);
-      // run through every row of data
-      $logic = FALSE;
       if ($dataset->num_rows > 0) {
         while ($row = $dataset->fetch_assoc()) {
           if ($row['username'] === $username && $row['password'] === $password) {
             $_SESSION['username'] = $username;
-            $logic = TRUE;
             if ($row['type'] === 'buyer') 
               header('Location: ../buyer-homepage.php');
             else
               header('Location: ../seller-homepage.php');
           }
         }
-        if ($logic === FALSE) {
-          echo '<script>alert("Welcome to Geeks for Geeks")</script>';
-          // header('Location: ../index.php');
-        }
       }
     }
     
-    // check if button pressed is sign up as buyer
     else if (isset($_POST['signupbuyer'])) {
-      $sql = "INSERT INTO $sqltable (username, `password`, `type`) VALUES ('$username', '$password', 'buyer')";
-      
-      // 1. without checking
+      $sql = "INSERT INTO $sqltable (username, `password`, `type`)
+        VALUES ('$username', '$password', 'buyer')";
       $conn->query($sql);
-
-      // // 2. check if inserted properly
-      // if ($conn->query($sql) === TRUE)
-      //     echo "Insertion sucessful";
-      // else
-      //   echo "Insertion UNSUCCESSFUL: " . $conn->error;
-      
       $_SESSION['username'] = $username;
       header('Location: ../buyer-homepage.php');
     }
     
-    // check if button pressed is sign up as seller
     else if (isset($_POST['signupseller'])) {
-      $sql = "INSERT INTO $sqltable (username, `password`, `type`) VALUES ('$username', '$password', 'seller')";
-
-      // 1. without checking
+      $sql = "INSERT INTO $sqltable (username, `password`, `type`)
+        VALUES ('$username', '$password', 'seller')";
       $conn->query($sql);
-
-      // // 2. check if inserted properly
-      // if ($conn->query($sql) === TRUE)
-      //     echo "Insertion sucessful";
-      // else
-      //   echo "Insertion UNSUCCESSFUL: " . $conn->error;
-
       $_SESSION['username'] = $username;
       header('Location: ../seller-homepage.php');
     }

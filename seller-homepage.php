@@ -18,25 +18,25 @@
 
 <body class='pt-5 pb-5'>
   <?php include("Templates/user-header.html") ?>
-  <!-- add items -->
-  <section class='bg-dark text-light p-5 text-right text-sm-start' id='adding'>
+  <!-- add product -->
+  <section class='bg-dark text-light p-5 text-right text-sm-start'>
     <div class="container">
       <div class="row">
-        <div class="col-sm-7 text-right text-sm-center" id="additem">
+        <div class="col-sm-7 text-right text-sm-center">
           <form>
             <div class="row">
               <div class="col">
-                <label for="" class="form-label">Image:</label><br>
-                <img id="uploadPreview" style="width: 200px; height: 200px;" />
+                <label class="form-label">Image:</label><br>
+                <img id="product-image-preview" style="width: 200px; height: 200px;" />
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input id="itemimageinput" type="file" onchange="PreviewImage();" />
+                <input id="product-image" type="file" onchange="PreviewImage();" />
                 <script type="text/javascript">
                   function PreviewImage() {
                     var oFReader = new FileReader();
-                    oFReader.readAsDataURL(document.getElementById("itemimageinput").files[0]);
+                    oFReader.readAsDataURL(document.getElementById("product-image").files[0]);
                     oFReader.onload = function(oFREvent) {
-                      document.getElementById("uploadPreview").src = oFREvent.target.result;
+                      document.getElementById("product-image-preview").src = oFREvent.target.result;
                     };
                   };
                 </script>
@@ -45,36 +45,36 @@
             <hr>
             <div class="row">
               <div class="col d-flex justify-content-center align-items-center">
-                <label for="" class="form-label">Item Name:</label>
+                <label class="form-label">Product Name:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" id="itemnameinput">
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col d-flex justify-content-center align-items-center">
-                <label for="" class="form-label">Item Description:</label>
-              </div>
-              <div class="col d-flex justify-content-center align-items-center">
-                <textarea class="form-control" id="itemdescriptioninput" rows='3'></textarea>
+                <input type="text" class="form-control" name="product-name">
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col d-flex justify-content-center align-items-center">
-                <label for="" class="form-label">Item Price:</label>
+                <label class="form-label">Product Description:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" id="itempriceinput">
+                <textarea class="form-control" id="product-description" rows='3'></textarea>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col d-flex justify-content-center align-items-center">
+                <label class="form-label">Product Price:</label>
+              </div>
+              <div class="col d-flex justify-content-center align-items-center">
+                <input type="number" class="form-control" id="product-price">
               </div>
             </div>
             <div class="row">
               <div class="col d-flex justify-content-center align-items-center">
-                <label for="" class="form-label">Item Count:</label>
+                <label class="form-label">Product Count:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" id="itempriceinput">
+                <input type="number" class="form-control" id="product-count">
               </div>
             </div>
             <hr>
@@ -83,6 +83,7 @@
         <div class="col-sm-5 d-flex justify-content-center align-items-center">
           <h1>
             <span class="text-warning text-right">Add Items</span>
+            <input type
           </h1>
         </div>
       </div>
