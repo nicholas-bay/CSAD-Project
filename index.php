@@ -2,7 +2,6 @@
 <html lang="en">
 
 <html>
-
 <head>
   <title>Sign Up / Login</title>
   <meta charset="utf-8" />
@@ -14,6 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css" />
   <script src=assets/template.js></script>
+  <!-- tyest -->
 </head>
 
 <body class='pt-5 pb-5'>
