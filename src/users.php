@@ -4,8 +4,8 @@
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $sqlservername = 'localhost';
     $sqlusername = 'root';
-    $sqlpassword = 'root';
-    $sqldatabase = 'usersDB';
+    $sqlpassword = '';
+    $sqldatabase = 'Shopee';
     $sqltable = 'users';
     $username = $_POST['username'];
     $password = $_POST['password'];

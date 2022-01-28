@@ -83,15 +83,57 @@
         <div class="col-sm-5 d-flex justify-content-center align-items-center">
           <h1>
             <span class="text-warning text-right">Add Items</span>
-            <input type
+            <input type="submit" class="form-control" id="add-items">
           </h1>
         </div>
       </div>
     </div>
   </section>
-  <section>
-    New Section
-    <hr>
+  <section id=selling-items>
+    <div class="container py-5">
+      <h4 class="font-rubik font-size-14">Items Being Sold</h4>
+      <hr>
+      <!-- owl carousel -->
+      <div class="owl-carousel owl-theme">
+        <div class="item py-2">
+          <div class="product font-rale">
+            <a href="#"><img src="../assets/products/1.png" alt="product1" class="img-fluid"></a>
+            <div class="text-center">
+              <h6>Samsung Galaxy 10</h6>
+              <div class="rating text-warning font-size-12">
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="far fa-star"></i></span>
+              </div>
+              <div class="price py-2">
+                <span>$152</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item py-2">
+          <div class="product font-rale">
+            <a href="#"><img src="../assets/products/2.png" alt="product1" class="img-fluid"></a>
+            <div class="text-center">
+              <h6>Readme Note 7</h6>
+              <div class="rating text-warning font-size-12">
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
+                <span><i class="far fa-star"></i></span>
+              </div>
+              <div class="price py-2">
+                <span>$152</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- !owl carousel -->
+    </div>
   </section>
   <?php include("Templates/footer.html") ?>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

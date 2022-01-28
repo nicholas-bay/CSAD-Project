@@ -2,8 +2,8 @@
   // preset variables
   $sqlservername = 'localhost';
   $sqlusername = 'root';
-  $sqlpassword = 'root';
-  $sqldatabase = 'usersDB';
+  $sqlpassword = '';
+  $sqldatabase = 'Shopee';
   $sqltable = 'users';
 
   // create connection

@@ -1,7 +1,7 @@
 <?php
   $sqlservername = 'localhost';
   $sqlusername = 'root';
-  $sqlpassword = 'root';
+  $sqlpassword = '';
   $sqldatabase = 'Shopee';
 
   $conn = new mysqli($sqlservername, $sqlusername, $sqlpassword);
