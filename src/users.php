@@ -20,18 +20,21 @@
       $sql = "SELECT username, `password`, `type` FROM $sqltable";
       $dataset = $conn->query($sql);
       // run through every row of data
+      $logic = FALSE;
       if ($dataset->num_rows > 0) {
         while ($row = $dataset->fetch_assoc()) {
           if ($row['username'] === $username && $row['password'] === $password) {
-            if ($row['type'] === 'buyer') {
-              $_SESSION['username'] = $username;
-              header( 'Location: ../index-buyer.php');
-            }
-            else {
-              $_SESSION['username'] = $username;
-              header( 'Location: ../index-seller.php');
-            }
+            $_SESSION['username'] = $username;
+            $logic = TRUE;
+            if ($row['type'] === 'buyer') 
+              header('Location: ../buyer-homepage.php');
+            else
+              header('Location: ../seller-homepage.php');
           }
+        }
+        if ($logic === FALSE) {
+          echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+          // header('Location: ../index.php');
         }
       }
     }
@@ -50,7 +53,7 @@
       //   echo "Insertion UNSUCCESSFUL: " . $conn->error;
       
       $_SESSION['username'] = $username;
-      header('Location: ../index-buyer.php');
+      header('Location: ../buyer-homepage.php');
     }
     
     // check if button pressed is sign up as seller
@@ -67,6 +70,6 @@
       //   echo "Insertion UNSUCCESSFUL: " . $conn->error;
 
       $_SESSION['username'] = $username;
-      header('Location: ../index-seller.php');
+      header('Location: ../seller-homepage.php');
     }
   }
