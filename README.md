@@ -1,5 +1,5 @@
 # ET07021: Client-Server Applications Development
-> - Singapore Polytechnic (SP), Diploma in Computer Engineering (DCPE)
+> Singapore Polytechnic (SP), Diploma in Computer Engineering (DCPE)
 ## Resources
 ## Basic Guide on Github
 > If you lost your code or you just want to restart
