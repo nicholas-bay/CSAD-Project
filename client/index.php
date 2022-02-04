@@ -16,7 +16,7 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <?php $_SESSION['username'] = 'User'; include('header.php') ?>
+  <?php $_SESSION['username'] = 'User'; include('header-guest.php') ?>
   <!-- login / sign up section -->
   <section class="vh-100 gradient-custom" id='home'>
     <div class="container py-5 h-100">
@@ -45,10 +45,7 @@
                   <div class="row pt-2">
                     <div class="col d-flex justify-content-end align-items-center">
                       <button type="submit" class="btn btn-dark" name='signupbuyer' style='border-radius: 10px;'>
-                        Sign Up as Buyer
-                      </button>
-                      <button type="submit" class="btn btn-dark" name='signupseller' style='border-radius: 10px;'>
-                        Sign Up as Seller
+                        Sign Up
                       </button>
                       <button type="submit" class="btn btn-dark" name='login' style='border-radius: 10px;'>
                         Login

@@ -4,5 +4,5 @@
   $password = 'root';
   $db = 'shopee';
   $tableuser = 'users';
-  $tableproduct = 'product';
+  $tableproduct = 'products';
 ?>

@@ -16,34 +16,28 @@
     </button>
     <div class="collapse navbar-collapse" id='navmenu'>
       <ul class="navbar-nav mx-auto my-auto">
-        <!-- home -->
+        <!-- listed products -->
         <li class='nav-item' id='navitem'>
-          <a href="#home" class="nav-link">
-            <i class="bi bi-house"></i> Home
+          <a class="nav-link">
+            <i class="bi bi-card-list"></i> Listed Products
           </a>
         </li>
-        <!-- download -->
+        <!-- add product -->
         <li class='nav-item' id='navitem'>
-          <a href="#download" class="nav-link">
-            <i class="bi bi-download"></i> Download
+          <a href="#addproduct" class="nav-link">
+            <i class="bi bi-plus-circle"></i> Add Product
           </a>
         </li>
-        <!-- help -->
+        <!-- delete product -->
         <li class='nav-item' id='navitem'>
-          <a href="#help" class="nav-link">
-            <i class="bi bi-info-circle"></i> Help
+          <a href="#deleteproduct" class="nav-link">
+            <i class="bi bi-trash"></i> Delete Product
           </a>
         </li>
-        <!-- search -->
+        <!-- update product -->
         <li class='nav-item' id='navitem'>
           <a class="nav-link" href="#search">
-            <i class="bi bi-search"></i> Search
-          </a>
-        </li>
-        <!-- cart -->
-        <li class='nav-item' id='navitem'>
-          <a class="nav-link" href="#cart">
-            <i class="bi bi-cart"></i> Cart
+            <i class="bi bi-box-arrow-in-up-right"></i> Update Product
           </a>
         </li>
         <!-- person -->

@@ -2,7 +2,7 @@
   include 'config.php';
   session_start();
   $username = $pwd = '';
-
+  
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $conn = new mysqli($host, $user, $password, $db);
     $username = $_POST['username'];
@@ -29,14 +29,5 @@
       $conn->query($sql);
       $_SESSION['username'] = $username;
       header('Location: ../client/buyerhome.php');
-    }
-    
-    else if (isset($_POST['signupseller'])) {
-      $sql = 
-        "INSERT INTO $tableuser
-        VALUES ('$username', '$pwd', 'seller')";
-      $conn->query($sql);
-      $_SESSION['username'] = $username;
-      header('Location: ../client/sellerhome.php');
     }
   }

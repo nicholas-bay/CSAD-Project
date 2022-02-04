@@ -9,9 +9,10 @@
     $description = $_POST['product-description'];
     $price = $_POST['product-price'];
     $count = $_POST['product-count'];
-    $sql = 
-      "INSERT INTO $tableproduct
-      VALUES ('$name', '$description', '$price', '$count', NULL)";
+    $sql = "
+      INSERT INTO $tableproduct
+      VALUES ('$name', '$description', '$price', '$count', NULL)
+    ";
     $conn->query($sql);
     header('Location: ../client/sellerhome.php');
   }
