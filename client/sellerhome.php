@@ -19,13 +19,24 @@
 <body class='pt-5 pb-5'>
   <?php include 'header.php' ?>
   <!-- show product -->
-  <section class='bg-warning text-dark p-5 text-right text-sm-start'>
+  <section class='bg-warning text-dark p-5 text-right text-sm-start' id='home'>
     <div class="container">
       <div class="row">
-        <div class="col-sm-7 text-right text-sm-center">
-          <h1>
-            
-          </h1>
+        <div class="col-sm-3 text-right text-sm-center">
+          <h1>Listed Products</h1>
+        </div>
+        <div class="col-sm-12 text-right text-sm-center">
+          <?php
+            include '../server/config.php';
+            $conn = new mysqli($host, $user, $password, $db);
+            $sql = "SELECT * FROM product";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo $row['name'] . "<br>";
+              }
+            }
+          ?>
         </div>
       </div>
     </div>
@@ -42,15 +53,12 @@
                 <img id="product-image-preview" style="width: 200px; height: 200px;" />
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input id="product-image" type="file" onchange="PreviewImage();" />
-                <script type="text/javascript">
-                  function PreviewImage() {
-                    var oFReader = new FileReader();
-                    oFReader.readAsDataURL(document.getElementById("product-image").files[0]);
-                    oFReader.onload = function(oFREvent) {
-                      document.getElementById("product-image-preview").src = oFREvent.target.result;
-                    };
-                  };
+                <input id="image" name= 'product-image' type="file" onchange="() => {
+                  var oFReader = new FileReader();
+                  oFReader.readAsDataURL(document.getElementById('image').files[0]);
+                  oFReader.onload = (oFREvent) => {
+                    document.getElementById('product-image-preview').src = oFREvent.target.result;
+                  }; };" />
                 </script>
               </div>
             </div>
@@ -69,7 +77,7 @@
                 <label class="form-label">Product Description:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <textarea class="form-control" id="product-description" rows='3'></textarea>
+                <textarea class="form-control" name="product-description" rows='3'></textarea>
               </div>
             </div>
             <hr>
@@ -78,7 +86,7 @@
                 <label class="form-label">Product Price:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="number" class="form-control" id="product-price">
+                <input type="number" class="form-control" name="product-price">
               </div>
             </div>
             <div class="row">
@@ -86,7 +94,7 @@
                 <label class="form-label">Product Count:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="number" class="form-control" id="product-count">
+                <input type="number" class="form-control" name="product-count">
               </div>
             </div>
             <hr>

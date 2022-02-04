@@ -8,7 +8,7 @@
     $username = $_POST['username'];
     $pwd = $_POST['password'];
     if (isset($_POST['login'])) {
-      $sql = "SELECT username, `password`, `type` FROM $tableuser";
+      $sql = "SELECT * FROM $tableuser";
       $dataset = $conn->query($sql);
       if ($dataset->num_rows > 0) {
         while ($row = $dataset->fetch_assoc()) {

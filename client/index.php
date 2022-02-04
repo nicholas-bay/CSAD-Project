@@ -16,9 +16,8 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <?php $_SESSION['username'] = 'User' ?>
-  <?php include('header.php') ?>
-  <!-- section -->
+  <?php $_SESSION['username'] = 'User'; include('header.php') ?>
+  <!-- login / sign up section -->
   <section class="vh-100 gradient-custom" id='home'>
     <div class="container py-5 h-100">
       <div class="row justify-content-center align-items-center h-100">
