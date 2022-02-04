@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,15 +17,25 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <!-- header -->
-  <div id='header'></div>
-  <script>$(() => { $('#header').load('header.html'); });</script>
+  <?php include 'header.php' ?>
+  <!-- show product -->
+  <section class='bg-warning text-dark p-5 text-right text-sm-start'>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7 text-right text-sm-center">
+          <h1>
+            
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- add product -->
   <section class='bg-dark text-light p-5 text-right text-sm-start'>
     <div class="container">
       <div class="row">
         <div class="col-sm-7 text-right text-sm-center">
-          <form id="additem" method="POST" action="../server/additem.php">
+          <form id="item" method="POST" action="../server/item.php">
             <div class="row">
               <div class="col">
                 <label class="form-label">Image:</label><br>
@@ -84,20 +95,13 @@
         <div class="col-sm-5 d-flex justify-content-center align-items-center">
           <h1>
             <span class="text-warning text-right">Add Items</span>
-            <input type="submit" class="form-control" form="additem">
+            <input type="submit" class="form-control" form="item">
           </h1>
         </div>
       </div>
     </div>
   </section>
-  <section id=selling-items>
-    <div class="container py-5">
-      <h4 class="font-rubik font-size-20">Items Being Sold</h4>
-      <hr>
-    </div>
-  </section>
-  <div id='footer'></div>
-  <script>$(() => { $('#footer').load('footer.html'); });</script>
+  <?php include 'footer.php' ?>
 </body>
 
 </html>

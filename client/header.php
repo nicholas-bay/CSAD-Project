@@ -18,7 +18,7 @@
       <ul class="navbar-nav mx-auto my-auto">
         <!-- home -->
         <li class='nav-item' id='navitem'>
-          <a href="../client/index.html" class="nav-link">
+          <a href="#home" class="nav-link">
             <i class="bi bi-house"></i> Home
           </a>
         </li>

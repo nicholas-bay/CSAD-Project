@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +16,10 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <!-- header -->
-  <div id='header'></div>
-  <script>$(() => { $('#header').load('header.html'); });</script>
+  <?php $_SESSION['username'] = 'User' ?>
+  <?php include('header.php') ?>
   <!-- section -->
-  <section class="vh-100 gradient-custom">
+  <section class="vh-100 gradient-custom" id='home'>
     <div class="container py-5 h-100">
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-7">
@@ -64,9 +64,7 @@
       </div>
     </div>
   </section>
-  <!-- footer -->
-  <div id='footer'></div>
-  <script>$(() => { $('#footer').load('footer.html'); });</script>
+  <?php include 'footer.php' ?>
 </body>
 
 </html>

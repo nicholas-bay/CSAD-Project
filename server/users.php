@@ -1,46 +1,42 @@
 <?php
+  include 'config.php';
   session_start();
-  $username = $password = '';
+  $username = $pwd = '';
+
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    $sqlservername = 'localhost';
-    $sqlusername = 'root';
-    $sqlpassword = '';
-    $sqldatabase = 'Shopee';
-    $sqltable = 'users';
+    $conn = new mysqli($host, $user, $password, $db);
     $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $conn = new mysqli($sqlservername, $sqlusername, $sqlpassword, $sqldatabase);
-
+    $pwd = $_POST['password'];
     if (isset($_POST['login'])) {
-      $sql = "SELECT username, `password`, `type` FROM $sqltable";
+      $sql = "SELECT username, `password`, `type` FROM $tableuser";
       $dataset = $conn->query($sql);
       if ($dataset->num_rows > 0) {
         while ($row = $dataset->fetch_assoc()) {
-          if ($row['username'] === $username && $row['password'] === $password) {
+          if ($row['username'] === $username && $row['password'] === $pwd) {
             $_SESSION['username'] = $username;
-            if ($row['type'] === 'buyer') 
-              header('Location: ../buyer-homepage.php');
+            if ($row['type'] === 'buyer')
+              header('Location: ../client/buyerhome.php');
             else
-              header('Location: ../seller-homepage.php');
+              header('Location: ../client/sellerhome.php');
           }
         }
       }
     }
-    
     else if (isset($_POST['signupbuyer'])) {
-      $sql = "INSERT INTO $sqltable (username, `password`, `type`)
-        VALUES ('$username', '$password', 'buyer')";
+      $sql = 
+        "INSERT INTO $tableuser
+        VALUES ('$username', '$pwd', 'buyer')";
       $conn->query($sql);
       $_SESSION['username'] = $username;
-      header('Location: ../buyer-homepage.php');
+      header('Location: ../client/buyerhome.php');
     }
     
     else if (isset($_POST['signupseller'])) {
-      $sql = "INSERT INTO $sqltable (username, `password`, `type`)
-        VALUES ('$username', '$password', 'seller')";
+      $sql = 
+        "INSERT INTO $tableuser
+        VALUES ('$username', '$pwd', 'seller')";
       $conn->query($sql);
       $_SESSION['username'] = $username;
-      header('Location: ../seller-homepage.php');
+      header('Location: ../client/sellerhome.php');
     }
   }
