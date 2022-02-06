@@ -13,39 +13,37 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body class='pt-5 pb-5'>
   <?php include 'header.php' ?>
-  <!-- show product -->
-  <section class='bg-warning text-dark p-5 text-right text-sm-start' id='listedproduct'>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 d-flex justify-content-center align-items-center">
-          <h1>Listed Products</h1>
-        </div>
-        <div class="col-sm-7 d-flex">
-          <?php
-          include '../server/config.php';
-          $conn = new mysqli($host, $user, $password, $db);
-          $sql = "SELECT * FROM $tableproduct";
-          $result = $conn->query($sql);
-          if (!empty($result) && $result->num_rows > 0) {
-            $count = 1;
-            while ($row = $result->fetch_assoc()) {
-              echo "Product $count<br>Name: " . $row['name'] .
-                "<br>Description: " . $row['description'] .
-                "<br>Price: $" . $row['price'] .
-                "<br>Count: " . $row['count'] . "<br><br>";
-              $count++;
-            }
-          }
-          ?>
-        </div>
-      </div>
+  <!-- Offcanvas Sidebar -->
+  <div class="offcanvas offcanvas-start" id="listedproduct">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title">Products</h1>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
-  </section>
+    <div class="offcanvas-body">
+      <?php
+      include '../server/config.php';
+      $conn = new mysqli($host, $user, $password, $db);
+      $sql = "SELECT * FROM $tableproduct";
+      $result = $conn->query($sql);
+      if (!empty($result) && $result->num_rows > 0) {
+        $count = 1;
+        while ($row = $result->fetch_assoc()) {
+          echo "<p>Product $count<br>Name: " . $row['name'] .
+            "<br>Description: " . $row['description'] .
+            "<br>Price: $" . $row['price'] .
+            "<br>Count: " . $row['count'] . "<br><br></p>";
+          $count++;
+        }
+      }
+      ?>
+    </div>
+  </div>
   <!-- configure product -->
   <section class='bg-dark text-light p-5 text-right text-sm-start' id='configureproduct'>
     <div class="container">
