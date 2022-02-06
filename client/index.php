@@ -44,11 +44,11 @@
                   </div>
                   <div class="row pt-2">
                     <div class="col d-flex justify-content-end align-items-center">
-                      <button type="submit" class="btn btn-dark" name='signupbuyer' style='border-radius: 10px;'>
-                        Sign Up
-                      </button>
                       <button type="submit" class="btn btn-dark" name='login' style='border-radius: 10px;'>
                         Login
+                      </button>
+                      <button type="submit" class="btn btn-dark" name='signupbuyer' style='border-radius: 10px;'>
+                        Sign Up
                       </button>
                     </div>
                   </div>
