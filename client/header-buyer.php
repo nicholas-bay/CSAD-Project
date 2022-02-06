@@ -39,14 +39,14 @@
         </li>
         <!-- person -->
         <li class='nav-item' id='navitem'>
-          <a href="../client/index.php" class="nav-link">
-            <i class="bi bi-person"></i> <?php echo $_SESSION['username']; ?>
+          <a href="../client/buyer-profile-settings.php" class="nav-link">
+            <i class="bi bi-person"></i> <?php echo $_SESSION['username'] . " Settings"; ?>
           </a>
         </li>
         <!-- settings -->
         <li class='nav-item' id='navitem'>
-          <a href="../client/buyer-settings.php" class="nav-link">
-            <i class="bi bi-gear"></i> Settings
+          <a href="../client/index.php" class="nav-link">
+            <i class="bi bi-door-open"></i> Logout
           </a>
         </li>
       </ul>
