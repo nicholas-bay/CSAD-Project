@@ -25,19 +25,7 @@
         <!-- add product -->
         <li class='nav-item' id='navitem'>
           <a href="#addproduct" class="nav-link">
-            <i class="bi bi-plus-circle"></i> Add Product
-          </a>
-        </li>
-        <!-- delete product -->
-        <li class='nav-item' id='navitem'>
-          <a href="#deleteproduct" class="nav-link">
-            <i class="bi bi-trash"></i> Delete Product
-          </a>
-        </li>
-        <!-- update product -->
-        <li class='nav-item' id='navitem'>
-          <a class="nav-link" href="#search">
-            <i class="bi bi-box-arrow-in-up-right"></i> Update Product
+            <i class="bi bi-pencil"></i> Configure Product
           </a>
         </li>
         <!-- person -->

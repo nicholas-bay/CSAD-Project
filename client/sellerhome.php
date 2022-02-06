@@ -29,7 +29,7 @@
           <?php
           include '../server/config.php';
           $conn = new mysqli($host, $user, $password, $db);
-          $sql = "SELECT * FROM products";
+          $sql = "SELECT * FROM $tableproduct";
           $result = $conn->query($sql);
           if (!empty($result) && $result->num_rows > 0) {
             $count = 1;
@@ -58,12 +58,15 @@
                 <img id="product-image-preview" style="width: 200px; height: 200px;" />
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input id="image" name='product-image' type="file" onchange="() => {
-                  var oFReader = new FileReader();
-                  oFReader.readAsDataURL(document.getElementById('image').files[0]);
-                  oFReader.onload = (oFREvent) => {
-                    document.getElementById('product-image-preview').src = oFREvent.target.result;
-                  }; };" />
+                <input type="file" onchange="previewFile()"><br>
+                <script>
+                  function previewFile() {
+                    const preview = document.querySelector('img');
+                    const file = document.querySelector('input[type=file]').files[0];
+                    const reader = new FileReader();
+                    reader.addEventListener("load", () => { preview.src = reader.result; }, false);
+                    if (file) reader.readAsDataURL(file);
+                  }
                 </script>
               </div>
             </div>
@@ -105,79 +108,19 @@
             <hr>
           </form>
         </div>
-        <div class="col-sm-5 d-flex justify-content-center align-items-center">
-          <h1>
-            <span class="text-warning text-right">Add Items</span>
-            <input type="submit" class="form-control" form="item">
-          </h1>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- update product -->
-  <section class='bg-dark text-light p-5 text-right text-sm-start'>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 d-flex justify-content-center align-items-center">
-          <h1>
-            <span class="text-warning text-right">Update Product</span>
-            <input type="submit" class="form-control" form="item">
-          </h1>
-        </div>
-        <div class="col-sm-7 d-flex justify-content-center align-items-center">
-          <form id="item" method="POST" action="../server/products.php">
-            <div class="row">
-              <div class="col">
-                <label class="form-label">Image:</label><br>
-                <img id="product-image-preview" style="width: 200px; height: 200px;" />
-              </div>
-              <div class="col d-flex justify-content-center align-items-center">
-                <input id="image" name='product-image' type="file" onchange="() => {
-                  var oFReader = new FileReader();
-                  oFReader.readAsDataURL(document.getElementById('image').files[0]);
-                  oFReader.onload = (oFREvent) => {
-                    document.getElementById('product-image-preview').src = oFREvent.target.result;
-                  }; };" />
-                </script>
-              </div>
+        <div class="col-sm-2 d-flex justify-content-center align-items-center">
+          <div class='col '>
+            <div class='row'>
+              <input type='submit' class='form-control' form='item' name='addupdate' value="Add / Update Product">
             </div>
             <hr>
-            <div class="row">
-              <div class="col d-flex justify-content-center align-items-center">
-                <label class="form-label">Product Name:</label>
-              </div>
-              <div class="col d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" name="product-name">
-              </div>
+            <div class='row'>
+              <form>
+                <input type='text' class='form-control' name='product-name-delete', placeholder="Product Name">
+                <input type='submit' class='form-control' form='item' name='delete' value="Delete Product">
+              </form>
             </div>
-            <hr>
-            <div class="row">
-              <div class="col d-flex justify-content-center align-items-center">
-                <label class="form-label">Product Description:</label>
-              </div>
-              <div class="col d-flex justify-content-center align-items-center">
-                <textarea class="form-control" name="product-description" rows='3'></textarea>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col d-flex justify-content-center align-items-center">
-                <label class="form-label">Product Price:</label>
-              </div>
-              <div class="col d-flex justify-content-center align-items-center">
-                <input type="number" class="form-control" name="product-price">
-              </div>
-            </div>
-            <div class="row">
-              <div class="col d-flex justify-content-center align-items-center">
-                <label class="form-label">Product Count:</label>
-              </div>
-              <div class="col d-flex justify-content-center align-items-center">
-                <input type="number" class="form-control" name="product-count">
-              </div>
-            </div>
-            <hr>
-          </form>
+          </div>
         </div>
       </div>
     </div>
