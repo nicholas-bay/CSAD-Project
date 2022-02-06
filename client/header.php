@@ -18,13 +18,13 @@
       <ul class="navbar-nav mx-auto my-auto">
         <!-- listed products -->
         <li class='nav-item' id='navitem'>
-          <a class="nav-link">
+          <a href='#listedproduct' class="nav-link">
             <i class="bi bi-card-list"></i> Listed Products
           </a>
         </li>
-        <!-- add product -->
+        <!-- configure product -->
         <li class='nav-item' id='navitem'>
-          <a href="#addproduct" class="nav-link">
+          <a href="#configureproduct" class="nav-link">
             <i class="bi bi-pencil"></i> Configure Product
           </a>
         </li>

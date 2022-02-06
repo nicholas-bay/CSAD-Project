@@ -11,16 +11,18 @@
       $price = $_POST['product-price'];
       $count = $_POST['product-count'];
       $sql = "
-      INSERT INTO $tableproduct
-      VALUES ('$name', '$description', $price, $count, NULL)
-      ON DUPLICATE KEY UPDATE
-      description = '$description', price = $price, count = $count, image = NULL 
+        INSERT INTO $tableproduct
+        VALUES ('$name', '$description', $price, $count, NULL)
+        ON DUPLICATE KEY UPDATE
+        description = '$description', price = $price, count = $count, image = NULL 
       ";
       $conn->query($sql);
     }
     else if (isset($_POST['delete'])) {
       $name = $_POST['product-name-delete'];
-      $sql = " DELETE FROM $tableproduct WHERE name = $name; ";
+      $sql = "
+      DELETE FROM $tableproduct WHERE name = '$name';
+      ";
       $conn->query($sql);
     }
     header('Location: ../client/sellerhome.php');

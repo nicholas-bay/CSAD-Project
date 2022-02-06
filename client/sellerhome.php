@@ -46,8 +46,8 @@
       </div>
     </div>
   </section>
-  <!-- add product -->
-  <section class='bg-dark text-light p-5 text-right text-sm-start'>
+  <!-- configure product -->
+  <section class='bg-dark text-light p-5 text-right text-sm-start' id='configureproduct'>
     <div class="container">
       <div class="row">
         <div class="col-sm-7 d-flex justify-content-center align-items-center">
@@ -64,7 +64,9 @@
                     const preview = document.querySelector('img');
                     const file = document.querySelector('input[type=file]').files[0];
                     const reader = new FileReader();
-                    reader.addEventListener("load", () => { preview.src = reader.result; }, false);
+                    reader.addEventListener("load", () => {
+                      preview.src = reader.result;
+                    }, false);
                     if (file) reader.readAsDataURL(file);
                   }
                 </script>
@@ -115,9 +117,9 @@
             </div>
             <hr>
             <div class='row'>
-              <form>
-                <input type='text' class='form-control' name='product-name-delete', placeholder="Product Name">
-                <input type='submit' class='form-control' form='item' name='delete' value="Delete Product">
+              <form method="POST" action="../server/products.php">
+                <input type='text' class='form-control' name='product-name-delete' , placeholder="Product Name">
+                <input type='submit' class='form-control' name='delete' value="Delete Product">
               </form>
             </div>
           </div>
@@ -127,6 +129,5 @@
   </section>
   <?php include 'footer.php' ?>
 </body>
-
 
 </html>
