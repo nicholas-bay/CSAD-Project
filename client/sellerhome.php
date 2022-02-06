@@ -56,15 +56,13 @@
                 <img id="product-image-preview" style="width: 200px; height: 200px;" />
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="file" onchange="previewFile()" name="product-image"><br>
+                <input type="file" class='form-control' onchange="previewFile()" name="product-image"><br>
                 <script>
                   function previewFile() {
                     const preview = document.querySelector('img');
                     const file = document.querySelector('input[type=file]').files[0];
                     const reader = new FileReader();
-                    reader.addEventListener("load", () => {
-                      preview.src = reader.result;
-                    }, false);
+                    reader.addEventListener("load", () => { preview.src = reader.result; }, false);
                     if (file) reader.readAsDataURL(file);
                   }
                 </script>

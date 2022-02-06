@@ -11,6 +11,7 @@
       $price = $_POST['product-price'];
       $count = $_POST['product-count'];
       $image = $_POST['product-image'];
+      // echo $name . $description . $price . $count;
       $sql = "
         INSERT INTO $tableproduct
         VALUES ('$name', '$description', $price, $count, NULL)
