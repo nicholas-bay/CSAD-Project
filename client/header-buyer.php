@@ -40,7 +40,7 @@
         <!-- person -->
         <li class='nav-item' id='navitem'>
           <a href="../client/buyer-profile-settings.php" class="nav-link">
-            <i class="bi bi-person"></i> <?php echo $_SESSION['username'] . " Settings"; ?>
+            <i class="bi bi-person"></i> <?php echo $_SESSION['username']; ?>
           </a>
         </li>
         <!-- settings -->

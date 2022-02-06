@@ -10,7 +10,7 @@ CREATE TABLE products (
   description TEXT NOT NULL,
   price FLOAT NOT NULL,
   count SMALLINT NOT NULL,
-  image BLOB);
+  image LONGBLOB NOT NULL);
 INSERT INTO users VALUES
   ('buyer', '123', 'buyer'),
   ('admin', '123', 'seller');

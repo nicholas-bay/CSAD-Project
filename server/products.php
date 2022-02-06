@@ -10,22 +10,23 @@
       $description = $_POST['product-description'];
       $price = $_POST['product-price'];
       $count = $_POST['product-count'];
-      $image = $_POST['product-image'];
-      // echo $name . $description . $price . $count;
+      $image = addslashes(file_get_contents($_FILES["product-image"]["tmp_name"]));
       $sql = "
         INSERT INTO $tableproduct
-        VALUES ('$name', '$description', $price, $count, NULL)
+        VALUES ('$name', '$description', $price, $count, '$image')
         ON DUPLICATE KEY UPDATE
-        description = '$description', price = $price, count = $count, image = NULL 
+        description = '$description', price = $price, count = $count, image = '$image' 
       ";
-      $conn->query($sql);
+      if ($conn->query($sql) == TRUE) echo "Sucessful";
+      else echo $conn->error;
     }
     else if (isset($_POST['delete'])) {
       $name = $_POST['product-name-delete'];
       $sql = "
       DELETE FROM $tableproduct WHERE name = '$name';
       ";
-      $conn->query($sql);
+      if ($conn->query($sql) == TRUE) echo "Sucessful";
+      else echo $conn->error;
     }
     header('Location: ../client/sellerhome.php');
   }

@@ -49,7 +49,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-7 d-flex justify-content-center align-items-center">
-          <form id="item" method="POST" action="../server/products.php">
+          <form id="item" method="POST" action="../server/products.php" enctype="multipart/form-data">
             <div class="row">
               <div class="col">
                 <label class="form-label">Image:</label><br>
@@ -62,7 +62,9 @@
                     const preview = document.querySelector('img');
                     const file = document.querySelector('input[type=file]').files[0];
                     const reader = new FileReader();
-                    reader.addEventListener("load", () => { preview.src = reader.result; }, false);
+                    reader.addEventListener("load", () => {
+                      preview.src = reader.result;
+                    }, false);
                     if (file) reader.readAsDataURL(file);
                   }
                 </script>

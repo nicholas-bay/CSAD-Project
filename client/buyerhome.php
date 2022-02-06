@@ -43,8 +43,10 @@
             echo "
               <div class='col-sm-3'>
                 <div class='card' style='width: 18rem; margin: 30px;'>
-                  <img class='card-img-top' src=" . $row['image'] . " alt='image missing'>
+                  <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' class='img-thumnail' />
                   <div class='card-body'>
+                    <h5 class='card-title text-dark'>" . 
+                    " ($" . $row['price'] . ")</h5>
                     <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                     <h5 class='card-text'>" . $row['description'] . "</h5>
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
