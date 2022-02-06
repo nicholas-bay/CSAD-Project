@@ -1,7 +1,7 @@
 <?php
   include 'config.php';
   session_start();
-  $name = $description = $price = $count = '';
+  $name = $description = $price = $count = $image = '';
 
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $conn = new mysqli($host, $user, $password, $db);
@@ -10,6 +10,7 @@
       $description = $_POST['product-description'];
       $price = $_POST['product-price'];
       $count = $_POST['product-count'];
+      $image = $_POST['product-image'];
       $sql = "
         INSERT INTO $tableproduct
         VALUES ('$name', '$description', $price, $count, NULL)
