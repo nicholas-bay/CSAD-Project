@@ -56,7 +56,7 @@
                 <img id="product-image-preview" style="width: 200px; height: 200px;" />
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="file" onchange="previewFile()"><br>
+                <input type="file" onchange="previewFile()" name="product-image"><br>
                 <script>
                   function previewFile() {
                     const preview = document.querySelector('img');

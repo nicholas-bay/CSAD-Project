@@ -15,6 +15,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+  .card {
+    transition: transform .2s; /* Animation */
+  }
+
+  .card:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  </style>
 </head>
 
 <body class='pt-5 pb-5'>
