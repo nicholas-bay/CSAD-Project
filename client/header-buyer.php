@@ -16,25 +16,10 @@
     </button>
     <div class="collapse navbar-collapse" id='navmenu'>
       <ul class="navbar-nav mx-auto my-auto">
-        <!-- search -->
-        <li class='nav-item' id='navitem'>
-          <form method="POST" action="../server/products.php">
-            <div class="col d-flex justify-content-center align-items-center">
-              <input type="text" class="form-control" style="width: 400px;" name="product-search">
-              <input type='submit' class='form-control' style='margin-left: 10px; width: 100px;' name='search' value='Search'>
-            </div>
-          </form>
-        </li>
         <!-- listed products -->
         <li class='nav-item' id='navitem'>
-          <a href='buyerhome.php' class="nav-link" data-bs-toggle="offcanvas">
+          <a href='buyerhome.php' class="nav-link">
             <i class="bi bi-card-list"></i> Listed Products
-          </a>
-        </li>
-        <!-- cart -->
-        <li class='nav-item' id='navitem'>
-          <a href="#cart" class="nav-link" data-bs-toggle="offcanvas">
-            <i class="bi bi-cart"></i> Cart
           </a>
         </li>
         <!-- person -->

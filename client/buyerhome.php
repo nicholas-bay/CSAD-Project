@@ -38,6 +38,25 @@
       <p>test</p>
     </div>
   </div>
+  <section class='bg-warning text-dark p-5 text-right text-sm-start justify-item-center'>
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class='col-sm-10'>
+          <form method="POST" action="../server/products.php">
+            <div class="col d-flex justify-content-center align-items-center">
+              <input type="text" class="form-control" name="product-search">
+              <input type='submit' class='form-control' style='margin-left: 15px; width: 120px;' name='search' value='Search'>
+            </div>
+          </form>
+        </div>
+        <div class='col-2 align-content-end'>
+          <a href="#cart" class="btn btn-dark" data-bs-toggle="offcanvas">
+            <i class="bi bi-cart"></i> Cart
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- display products -->
   <section class='bg-dark text-light p-5 text-right text-sm-start'>
     <div class="container">
