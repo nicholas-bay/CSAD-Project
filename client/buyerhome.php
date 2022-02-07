@@ -28,6 +28,7 @@
 
 <body class='pt-5 pb-5'>
   <?php include 'header-buyer.php' ?>
+  <?php $cart = array(); ?>
   <!-- Offcanvas Sidebar -->
   <div class="offcanvas offcanvas-start" id="cart">
     <div class="offcanvas-header">
@@ -35,7 +36,11 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-      <p>test</p>
+      <?php 
+        foreach ($cart as $item) {
+          echo $item . "\n";
+        }
+      ?>
     </div>
   </div>
   <section class='bg-warning text-dark p-5 text-right text-sm-start justify-item-center'>
@@ -80,8 +85,12 @@
                     <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                     <h5 class='card-text'>" . $row['description'] . "</h5>
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
-                    <button href='#' name='plus' class='btn-warning' style='border-radius: 12px;'><i class='bi bi-plus'></i></a>
-                    <button href='#' name='minus' class='btn-warning' style='border-radius: 12px;'><i class='bi bi-dash'></i></a>
+                    <form method='post'>
+                      <input type='submit' name='cart_action' class='btn-warning' style='border-radius: 12px;' value='Add'/>
+                      <input type='submit' name='cart_action' class='btn-warning' style='border-radius: 12px;' value='Subtract'/>
+                      <input type='hidden' name='name' value=" . $row['name'] . "/>
+                      <input type='hidden' name='count' value=" . $row['count'] . "/>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -94,6 +103,18 @@
     </div>
   </section>
   <?php include 'footer.php' ?>
+
+  <?php
+    if ($_POST["cart_action"] && $_POST["name"] && $_POST["count"]) {
+      $cart[$_POST["name"]] = $_POST["count"];
+      if ($_POST["cart_action"] == "Add") {
+        echo "Add: " . $_POST["name"] . " " . $_POST["count"];
+      } else if ($_POST["cart_action"] == "Subtract") {
+        echo "Subtract: " . $_POST["name"] . " " . $_POST["count"];
+      }
+    }
+  ?>
+
 </body>
 
 </html>
