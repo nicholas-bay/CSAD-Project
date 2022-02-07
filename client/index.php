@@ -31,7 +31,7 @@
                       <label class="form-label">Username:</label>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center">
-                      <input type="text" class="form-control" name="username">
+                      <input type="text" class="form-control" name="username" required>
                     </div>
                   </div>
                   <div class="row pt-2">
@@ -39,7 +39,7 @@
                       <label class="form-label">Password:</label>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center">
-                      <input type="text" class="form-control" name="password">
+                      <input type="text" class="form-control" name="password" required>
                     </div>
                   </div>
                   <div class="row pt-2">

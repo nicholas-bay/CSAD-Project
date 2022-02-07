@@ -18,7 +18,7 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <?php include 'header.php' ?>
+  <?php include 'header-seller.php' ?>
   <!-- Offcanvas Sidebar -->
   <div class="offcanvas offcanvas-start" id="listedproduct">
     <div class="offcanvas-header">
@@ -56,7 +56,7 @@
                 <img id="product-image-preview" style="width: 200px; height: 200px;" />
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="file" class='form-control' onchange="previewFile()" name="product-image"><br>
+                <input type="file" class='form-control' onchange="previewFile()" name="product-image" accept="image/*" required><br>
                 <script>
                   function previewFile() {
                     const preview = document.querySelector('img');
@@ -76,7 +76,7 @@
                 <label class="form-label">Product Name:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" name="product-name">
+                <input type="text" class="form-control" name="product-name" required>
               </div>
             </div>
             <hr>
@@ -85,7 +85,7 @@
                 <label class="form-label">Product Description:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <textarea class="form-control" name="product-description" rows='3'></textarea>
+                <textarea class="form-control" name="product-description" rows='3' required></textarea>
               </div>
             </div>
             <hr>
@@ -94,7 +94,7 @@
                 <label class="form-label">Product Price:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="number" class="form-control" name="product-price">
+                <input type="number" class="form-control" name="product-price" required>
               </div>
             </div>
             <div class="row">
@@ -102,7 +102,7 @@
                 <label class="form-label">Product Count:</label>
               </div>
               <div class="col d-flex justify-content-center align-items-center">
-                <input type="number" class="form-control" name="product-count">
+                <input type="number" class="form-control" name="product-count" required>
               </div>
             </div>
             <hr>
