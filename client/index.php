@@ -16,7 +16,7 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <?php $_SESSION['username'] = 'User'; $_SESSION['pointer'] = NULL; include('header-guest.php') ?>
+  <?php $_SESSION['username'] = 'User'; $_SESSION['pointer'] = NULL; $_SESSION['product_count'] = 0; include('header-guest.php') ?>
   <!-- login / sign up section -->
   <section class="vh-100 gradient-custom" id='home'>
     <div class="container py-5 h-100">

@@ -15,6 +15,8 @@
 </head>
 
 <body class='pt-5 pb-5'>
+  website portfolio
+  <?php include 'footer.php' ?>
 </body>
 
 </html>

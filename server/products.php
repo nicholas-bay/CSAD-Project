@@ -42,5 +42,13 @@
       else $_SESSION['pointer'] = NULL;
       header('Location: ../client/buyerhome.php');
     }
+    else if (isset($_POST['addcart'])) {
+      $_SESSION['product_count']++;
+      header('Location: ../client/buyerhome.php');
+    }
+    else if (isset($_POST['removecart'])) {
+      $_SESSION['product_count']--;
+      header('Location: ../client/buyerhome.php');
+    }
   }
 ?>

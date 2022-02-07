@@ -36,13 +36,14 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
-      <?php 
-        foreach ($cart as $item) {
-          echo $item . "\n";
-        }
+      <?php
+      foreach ($cart as $item) {
+        echo $item . "\n";
+      }
       ?>
     </div>
   </div>
+  <!-- search and cart -->
   <section class='bg-warning text-dark p-5 text-right text-sm-start justify-item-center'>
     <div class="container">
       <div class="row align-items-center justify-content-between">
@@ -85,12 +86,9 @@
                     <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                     <h5 class='card-text'>" . $row['description'] . "</h5>
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
-                    <form method='post'>
-                      <input type='submit' name='cart_action' class='btn-warning' style='border-radius: 12px;' value='Add'/>
-                      <input type='submit' name='cart_action' class='btn-warning' style='border-radius: 12px;' value='Subtract'/>
-                      <input type='hidden' name='name' value=" . $row['name'] . "/>
-                      <input type='hidden' name='count' value=" . $row['count'] . "/>
-                    </form>
+                    <input type='button' href='buyerhome.php?addcart=true' class='btn btn-warning' style='border-radius: 12px;' value='+'></input>
+                    <input type='button' href='buyerhome.php?removecart=true' class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
+                    " . $_SESSION['product_count'] . " in cart
                   </div>
                 </div>
               </div>
@@ -98,23 +96,27 @@
             if ($count % 4 == 0) echo "</div>";
           }
         }
+        function add()
+        {
+          echo "<script>alert('add')";
+        }
+        function remove()
+        {
+          echo "<script>alert('remove')";
+        }
+        if (isset($_GET['addcart'])) {
+          add();
+        }
+        if (isset($_GET['removecart'])) {
+          remove();
+        }
         ?>
+        <input type='button' href='buyerhome.php?removecart=true' class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
+        <?php echo $_SESSION['product_count'] ?>
       </div>
     </div>
   </section>
   <?php include 'footer.php' ?>
-
-  <?php
-    if ($_POST["cart_action"] && $_POST["name"] && $_POST["count"]) {
-      $cart[$_POST["name"]] = $_POST["count"];
-      if ($_POST["cart_action"] == "Add") {
-        echo "Add: " . $_POST["name"] . " " . $_POST["count"];
-      } else if ($_POST["cart_action"] == "Subtract") {
-        echo "Subtract: " . $_POST["name"] . " " . $_POST["count"];
-      }
-    }
-  ?>
-
 </body>
 
 </html>
