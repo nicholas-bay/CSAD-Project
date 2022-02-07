@@ -31,7 +31,7 @@
         <!-- person -->
         <li class='nav-item' id='navitem'>
           <a href="../client/index.php" class="nav-link">
-            <i class="bi bi-person"></i> <?php echo $_SESSION['username']; ?>
+            <i class="bi bi-person"></i> admin
           </a>
         </li>
       </ul>

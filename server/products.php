@@ -19,15 +19,28 @@
       ";
       if ($conn->query($sql) == TRUE) echo "Sucessful";
       else echo $conn->error;
+      header('Location: ../client/sellerhome.php');
     }
     else if (isset($_POST['delete'])) {
       $name = $_POST['product-name-delete'];
       $sql = "
-      DELETE FROM $tableproduct WHERE name = '$name';
+        DELETE FROM $tableproduct WHERE name = '$name';
       ";
       if ($conn->query($sql) == TRUE) echo "Sucessful";
       else echo $conn->error;
+      header('Location: ../client/sellerhome.php');
     }
-    header('Location: ../client/sellerhome.php');
+    else if (isset($_POST['search'])) {
+      $name = $_POST['product-search'];
+      $sql = "
+        SELECT * FROM products WHERE name = '$name';
+      ";
+      $result = $conn->query($sql);
+      if ($result == TRUE) echo "Sucessful";
+      else echo $conn->error;
+      if ($result->num_rows != 0) $_SESSION['pointer'] = $name;
+      else $_SESSION['pointer'] = NULL;
+      header('Location: ../client/buyerhome.php');
+    }
   }
 ?>
