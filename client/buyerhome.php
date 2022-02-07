@@ -61,7 +61,8 @@
                     <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                     <h5 class='card-text'>" . $row['description'] . "</h5>
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
-                    <a href='#' class='btn btn-warning pull-right'>Add to cart</a>
+                    <button href='#' name='plus' class='btn-warning' style='border-radius: 12px;'><i class='bi bi-plus'></i></a>
+                    <button href='#' name='minus' class='btn-warning' style='border-radius: 12px;'><i class='bi bi-dash'></i></a>
                   </div>
                 </div>
               </div>
