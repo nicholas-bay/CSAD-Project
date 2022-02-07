@@ -33,7 +33,7 @@
         </li>
         <!-- cart -->
         <li class='nav-item' id='navitem'>
-          <a href="cart.php" class="nav-link">
+          <a href="#cart" class="nav-link" data-bs-toggle="offcanvas">
             <i class="bi bi-cart"></i> Cart
           </a>
         </li>

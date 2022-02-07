@@ -19,6 +19,7 @@
     .card {
       transition: transform .2s;
     }
+
     .card:hover {
       transform: scale(1.25);
     }
@@ -27,6 +28,16 @@
 
 <body class='pt-5 pb-5'>
   <?php include 'header-buyer.php' ?>
+  <!-- Offcanvas Sidebar -->
+  <div class="offcanvas offcanvas-start" id="cart">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title">Cart</h1>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>test</p>
+    </div>
+  </div>
   <!-- display products -->
   <section class='bg-dark text-light p-5 text-right text-sm-start'>
     <div class="container">
@@ -55,7 +66,7 @@
                 </div>
               </div>
             ";
-            if($count % 4 == 0) echo "</div>";
+            if ($count % 4 == 0) echo "</div>";
           }
         }
         ?>
