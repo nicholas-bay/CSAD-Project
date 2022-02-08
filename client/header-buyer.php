@@ -6,15 +6,25 @@
     </button>
     <div class="collapse navbar-collapse" id='navmenu'>
       <ul class="navbar-nav mx-auto my-auto">
-        <!-- listed products -->
+        <!-- search -->
         <li class='nav-item' id='navitem'>
-          <a href='buyerhome.php' class="nav-link">
-            <i class="bi bi-card-list"></i> Listed Products
+          <form method="POST" action="#">
+            <form method="POST" action="../server/products.php">
+              <div class="col d-flex justify-content-center align-items-center">
+                <input type="text" class="form-control" style="width: 400px;" name="product-search">
+                <input type='submit' class='form-control' style='margin-left: 10px; width: 100px;' name='search' value='Search'>
+              </div>
+            </form>
+        </li>
+        <!-- cart -->
+        <li class='nav-item' id='navitem'>
+          <a href="#cart" class="nav-link" data-bs-toggle="offcanvas">
+            <i class="bi bi-cart"></i> Cart
           </a>
         </li>
         <!-- person -->
         <li class='nav-item' id='navitem'>
-          <a href="buyer-profile-settings.php" class="nav-link">
+          <a href="#settings" class="nav-link" data-bs-toggle="offcanvas">
             <i class="bi bi-person"></i> <?php echo $_SESSION['username']; ?>
           </a>
         </li>

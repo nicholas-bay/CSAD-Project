@@ -8,7 +8,7 @@
       <ul class="navbar-nav mx-auto my-auto">
         <!-- listed products -->
         <li class='nav-item' id='navitem'>
-          <a href='sellerhome.php' class="nav-link" data-bs-toggle="offcanvas">
+          <a href='#listedproduct' class="nav-link" data-bs-toggle="offcanvas">
             <i class="bi bi-card-list"></i> Listed Products
           </a>
         </li>
