@@ -83,7 +83,7 @@
       <div class="d-flex justify-content-center align-items-center">
         <?php
         $sql = "SELECT * FROM $tableproduct";
-        $Insert_sql = "INSERT INTO $tablecart('username', 'item_name', 'item_image') VALUES (" . $_SESSION['username'] . ",'Test2', NULL)";
+        $Insert_sql = "INSERT INTO $tablecart('username', 'item_name', 'item_image') VALUES (" . $_SESSION['username'] . ", 'Test2', NULL)";
         $result = $conn->query($sql);
         if (!empty($result) && $result->num_rows > 0) {
           echo "<div class='col'><div class='row'>";
