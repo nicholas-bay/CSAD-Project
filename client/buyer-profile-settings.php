@@ -16,9 +16,9 @@
 </head>
 
 <body class='pt-5 pb-5'>
-    <?php include 'header-buyer.php' ?>
+  <?php include 'header-buyer.php' ?>
 
-    <?php include 'footer.php' ?>
+  <?php include 'footer.php' ?>
 </body>
 
 </html>
