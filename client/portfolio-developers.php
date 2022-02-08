@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class='pt-5 pb-5'>
+<body class='pt-5 pb-5' style="background-color: #E0E0E0;">
   <?php  
     if ($_SESSION['username'] == 'User'){
       include 'header-guest.php';
