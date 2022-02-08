@@ -1,13 +1,3 @@
-<style>
-  li {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  #navmenu {
-    font-size: 13px;
-  }
-</style>
 <navbar class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
   <div class="container">
     <!-- toggle navmenu when small screen -->

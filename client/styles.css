@@ -1,0 +1,26 @@
+.gradient-custom {
+  background: linear-gradient(to right bottom, #F6D365, #FDA085)
+}
+#navmenu li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#navmenu {
+  font-size: 13px;
+}
+footer {
+  background-color: #F5F5F7;
+  padding: 17px 0px 0px;
+}
+footer ul {
+  list-style: none;
+  margin: 0px;
+}
+footer p {
+  color: #79797E;
+  font-size: 12px;
+  line-height: 1.33337;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  font-family: inherit;
+}

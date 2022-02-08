@@ -96,23 +96,7 @@
             if ($count % 4 == 0) echo "</div>";
           }
         }
-        function add()
-        {
-          echo "<script>alert('add')";
-        }
-        function remove()
-        {
-          echo "<script>alert('remove')";
-        }
-        if (isset($_GET['addcart'])) {
-          add();
-        }
-        if (isset($_GET['removecart'])) {
-          remove();
-        }
         ?>
-        <input type='button' href='buyerhome.php?removecart=true' class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
-        <?php echo $_SESSION['product_count'] ?>
       </div>
     </div>
   </section>

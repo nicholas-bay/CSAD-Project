@@ -4,12 +4,12 @@
     padding: 17px 0px 0px;
   }
 
-  ul {
+  footer ul {
     list-style: none;
     margin: 0px;
   }
 
-  p {
+  footer p {
     color: #79797E;
     font-size: 12px;
     line-height: 1.33337;
