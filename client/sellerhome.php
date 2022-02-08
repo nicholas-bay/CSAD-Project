@@ -45,7 +45,7 @@
     </div>
   </div>
   <!-- configure product -->
-  <section class='bg-dark text-light p-5 text-right text-sm-start' id='configureproduct'>
+  <section class='gradient-custom text-dark p-5 text-right text-sm-start' id='configureproduct'>
     <div class="container">
       <div class="row">
         <div class="col-sm-7 d-flex justify-content-center align-items-center">
