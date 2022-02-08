@@ -27,8 +27,13 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <?php include 'header-buyer.php' ?>
-  <?php $cart = array(); ?>
+  <?php
+  include 'header-buyer.php';
+  include '../server/config.php';
+  $item = array();
+  $_SESSION['item'] = $item;
+  $conn = new mysqli($host, $user, $password, $db);
+  ?>
   <!-- Offcanvas Sidebar -->
   <div class="offcanvas offcanvas-start" id="cart">
     <div class="offcanvas-header">
@@ -37,8 +42,17 @@
     </div>
     <div class="offcanvas-body">
       <?php
-      foreach ($cart as $item) {
-        echo $item . "\n";
+      $read_cart_sql = "SELECT * FROM $tablecart";
+      $cart_result = $conn->query($read_cart_sql);
+      if (!empty($cart_result) && $cart_result->num_rows > 0) {
+        for ($count = 1; $row = $cart_result->fetch_assoc(); $count++) {
+          echo "
+              <div class='col-sm-3'>
+                <img src='data:image/jpeg;base64," . base64_encode($row["item_image"]) . "' class='img-thumnail' />
+                <h5 class='card-title text-dark'>" . $row['item_name'] . "</h5>
+              </div>
+            ";
+        }
       }
       ?>
     </div>
@@ -68,9 +82,8 @@
     <div class="container">
       <div class="d-flex justify-content-center align-items-center">
         <?php
-        include '../server/config.php';
-        $conn = new mysqli($host, $user, $password, $db);
         $sql = "SELECT * FROM $tableproduct";
+        $Insert_sql = "INSERT INTO $tablecart('username', 'item_name', 'item_image') VALUES (" . $_SESSION['username'] . ",'Test2', NULL)";
         $result = $conn->query($sql);
         if (!empty($result) && $result->num_rows > 0) {
           echo "<div class='col'><div class='row'>";
@@ -86,19 +99,21 @@
                     <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                     <h5 class='card-text'>" . $row['description'] . "</h5>
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
-                    <input type='button' href='buyerhome.php?addcart=true' class='btn btn-warning' style='border-radius: 12px;' value='+'></input>
-                    <input type='button' href='buyerhome.php?removecart=true' class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
+                    <input type='button' class='btn btn-warning' style='border-radius: 12px;' value='+' onclick=" . array_push($item, $row['name']) . "></input>
+                    <input type='button' class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
                     " . $_SESSION['product_count'] . " in cart
                   </div>
                 </div>
               </div>
             ";
             if ($count % 4 == 0) echo "</div>";
+            $_SESSION['item'] = $item;
           }
         }
         ?>
       </div>
     </div>
+    <?php print_r($_SESSION['item']); ?>
   </section>
   <?php include 'footer.php' ?>
 </body>

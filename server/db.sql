@@ -16,7 +16,9 @@ CREATE TABLE products (
 CREATE TABLE cart ( 
   cart_id INT PRIMARY KEY AUTO_INCREMENT,
   username VARCHAR(50) NOT NULL,
-  item_name VARCHAR(50) NOT NULL)
+  item_name VARCHAR(50) NOT NULL,
+  item_image LONGBLOB NOT NULL,
+  item_count INT NOT NULL)
   ENGINE = InnoDB;
 INSERT INTO users VALUES
   ('buyer', '123', 'buyer'),
