@@ -15,7 +15,11 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  website portfolio
+  <?php include 'header-guest.php' ?>
+  <section class="vh-100" style="background-color: #C5C6D0;">
+    <div class="container py-5 h-100">
+    </div>
+  </section>
   <?php include 'footer.php' ?>
 </body>
 
