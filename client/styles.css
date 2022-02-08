@@ -1,5 +1,8 @@
-.gradient-custom {
+.gradient-1 {
   background: linear-gradient(to right bottom, #F6D365, #FDA085)
+}
+.gradient-2 {
+  background: linear-gradient(to right bottom, #FDA085,#F6D365)
 }
 #navmenu li {
   margin-left: 20px;
