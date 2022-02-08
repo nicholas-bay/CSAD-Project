@@ -16,22 +16,30 @@
 </head>
 
 <body class='pt-5 pb-5'>
-  <?php include 'header-guest.php' ?>
-  <section class="vh-100" style="background-color: #C5C6D0;">
+  <?php  
+    if ($_SESSION['username'] == 'User'){
+      include 'header-guest.php';
+    } else if ($_SESSION['username'] == 'admin') {
+      include 'header-seller.php';
+    } else {
+      include 'header-buyer.php';
+    }
+  ?>
+  <section class="vh-100" style="background-color: #E0E0E0;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center p-3">
         <div class="col col-lg-6 mb-4 mb-lg-0">
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
               <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/nicholas.jpg" alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                <img src="../assets/nicholas.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Nicholas Bay</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body p-4">
-                  <h6>Information</h6>
+                  <h5>Information</h5>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
                     <div class="col-6 mb-3">
@@ -52,14 +60,14 @@
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
               <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/eugene.jpg" alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                <img src="../assets/eugene.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Eugene Quek</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body p-4">
-                  <h6>Information</h6>
+                  <h5>Information</h5>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1 align-self-center">
                     <div class="col-6 mb-3">
@@ -82,14 +90,14 @@
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
               <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/ephraim.jpg" alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                <img src="../assets/ephraim.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Ephraim Yee</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body p-4">
-                  <h6>Information</h6>
+                  <h5>Information</h5>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1">
                     <div class="col-6 mb-3">
@@ -110,14 +118,14 @@
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
               <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/hongwei.jpg" alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
+                <img src="../assets/hongwei.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Chung Hong Wei</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body p-4">
-                  <h6>Information</h6>
+                  <h5>Information</h5>
                   <hr class="mt-0 mb-4">
                   <div class="row pt-1 align-self-center">
                     <div class="col-6 mb-3">

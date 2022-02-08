@@ -18,7 +18,7 @@
             <i class="bi bi-person"></i> <?php echo $_SESSION['username']; ?>
           </a>
         </li>
-        <!-- settings -->
+        <!-- logout -->
         <li class='nav-item' id='navitem'>
           <a href="index.php" class="nav-link">
             <i class="bi bi-door-open"></i> Logout
