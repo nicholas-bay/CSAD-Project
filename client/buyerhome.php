@@ -69,8 +69,8 @@
           echo "<div class='col'><div class='row'>";
           for ($count = 1; $row = $result->fetch_assoc(); $count++) {
             if ($count == 1 || ($count - 1) % 4 == 0) echo "<div class='row'>";
-            if ($row['name'] == $_SESSION['pointer']) $_SESSION['color'] = 'red';
-            else $_SESSION['color'] = 'white';
+            if ($row['name'] == $_SESSION['pointer']) $_SESSION['color'] = '-webkit-animation-name: greywhite; -webkit-animation-duration: 2s;';
+            else $_SESSION['color'] = 'background-color: white';
             echo "
               <div class='col-sm-3'>
                 <div class='card' id='productcard' style='width: 18rem; margin: 30px;" . $_SESSION['color'] . "'>
@@ -87,13 +87,12 @@
               </div>
             ";
             if ($count % 4 == 0) echo "</div>";
-            $_SESSION['item'] = $item;
           }
         }
+        $_SESSION['pointer'] = NULL;
         ?>
       </div>
     </div>
-    <?php print_r($_SESSION['item']); ?>
   </section>
   <?php include 'footer.php' ?>
 </body>

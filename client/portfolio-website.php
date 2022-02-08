@@ -16,23 +16,15 @@
 </head>
 
 <body class='pt-5 pb-5' style="background-color: #E0E0E0;">
-  <?php  
-    if ($_SESSION['username'] == 'User'){
-      include 'header-guest.php';
-    } else if ($_SESSION['username'] == 'admin') {
-      include 'header-seller.php';
-    } else {
-      include 'header-buyer.php';
-    }
-  ?>
+  <?php include 'header-guest.php'; ?>
   <section class="vh-100" style="background-color: #E0E0E0;">
     <div class="container py-3 h-100">
       <div class="row d-flex justify-content-center align-items-center p-5">
-        <iframe width="350px" height="275px" style="center" src="../assets/Baking Mayhem-Full Version.mp4"></iframe>
+        <iframe width="350px" height="275px" src="../assets/Baking Mayhem-Full Version.mp4"></iframe>
       </div>
       <div class="row d-flex justify-content-center align-items-center p-5">
         <div class="col col-lg-8 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem;">
+          <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                 <img src="../assets/animegirl.jpeg" alt="Avatar" class="img-fluid my-5" style="width: 130px;" />

@@ -33,3 +33,11 @@ footer p {
 #productcard.card:hover {
   transform: scale(1.25);
 }
+@-webkit-keyframes greywhite {  
+  0% { background-color: #A9A9A9; }
+  100% { background-color: white; }
+}
+#blinkingsearch {
+  -webkit-animation-name: greywhite;
+  -webkit-animation-duration: 3s; 
+}  

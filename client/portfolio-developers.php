@@ -16,16 +16,8 @@
 </head>
 
 <body class='pt-5 pb-5' style="background-color: #E0E0E0;">
-  <?php
-  if ($_SESSION['username'] == 'User') {
-    include 'header-guest.php';
-  } else if ($_SESSION['username'] == 'admin') {
-    include 'header-seller.php';
-  } else {
-    include 'header-buyer.php';
-  }
-  ?>
-  <section class="vh-100" style="background-color: #E0E0E0;">
+  <?php include 'header-guest.php'; ?>
+  <section class="vh-100">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center p-3">
         <div class="col col-lg-6 mb-4 mb-lg-0">

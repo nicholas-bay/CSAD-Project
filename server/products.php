@@ -32,14 +32,7 @@
     }
     else if (isset($_POST['search'])) {
       $name = $_POST['product-search'];
-      $sql = "
-        SELECT * FROM products WHERE name = '$name';
-      ";
-      $result = $conn->query($sql);
-      if ($result == TRUE) echo "Sucessful";
-      else echo $conn->error;
-      if ($result->num_rows != 0) $_SESSION['pointer'] = $name;
-      else $_SESSION['pointer'] = NULL;
+      $_SESSION['pointer'] = $name;
       header('Location: ../client/buyerhome.php');
     }
     else if (isset($_POST['addcart'])) {

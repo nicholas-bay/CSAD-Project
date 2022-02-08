@@ -8,13 +8,12 @@
       <ul class="navbar-nav mx-auto my-auto">
         <!-- search -->
         <li class='nav-item' id='navitem'>
-          <form method="POST" action="#">
-            <form method="POST" action="../server/products.php">
-              <div class="col d-flex justify-content-center align-items-center">
-                <input type="text" class="form-control" style="width: 400px;" name="product-search">
-                <input type='submit' class='form-control' style='margin-left: 10px; width: 100px;' name='search' value='Search'>
-              </div>
-            </form>
+          <form method="POST" action="../server/products.php">
+            <div class="col d-flex justify-content-center align-items-center">
+              <input type="text" class="form-control" style="width: 400px;" name="product-search" placeholder="Search">
+              <input type='submit' class='form-control' style='margin-left: 10px; width: 100px;' name='search'>
+            </div>
+          </form>
         </li>
         <!-- cart -->
         <li class='nav-item' id='navitem'>
