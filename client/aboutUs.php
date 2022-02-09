@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class='pt-5 pb-5 gradient-3'>
+<body class='pt-5 pb-5'>
   <!-- header -->
   <navbar class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
     <div class="container">
@@ -42,7 +42,7 @@
         <div class="col col-lg-6 mb-4 mb-lg-0">
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
-              <div class="col-md-4 gradient-1 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <div class="col-md-4 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                 <img src="../../assets/nicholas.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Nicholas Bay</h5>
                 <p>Diploma of Computer Engineering</p>
