@@ -21,7 +21,7 @@
         <!-- person -->
         <li class='nav-item' id='navitem'>
           <a href="../client/index.php" class="nav-link">
-            <i class="bi bi-person"></i> admin
+            <i class="bi bi-door-open"></i> Logout
           </a>
         </li>
       </ul>
