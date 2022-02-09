@@ -63,7 +63,7 @@
           <div class='container'>
             <div class='row d-flex justify-content-center align-items-center p-3'>
               <div class='card' style='border-radius: .5rem;'>
-                <form method='POST' action'../server/users.php'>
+                <form method='POST' action='../server/users.php'>
                   <div class='row text-center'>
                     <div class='card-body'>
                       <h5 class='card-title'>Username</h5>

@@ -31,13 +31,17 @@
       header('Location: ../client/buyerhome.php');
     }
     else if (isset($_POST['update'])) {
+      echo $_SESSION['username'] . "<br>";
+      echo $username . '<br>';
+      echo $pwd . '<br>';
       $sql = 
         "UPDATE $tableuser SET
         username = '$username',
         password = '$pwd'
-        WHERE username = '$username'";
+        WHERE username = '" . $_SESSION['username'] . "'";
       $conn->query($sql);
       $_SESSION['username'] = $username;
-      // header('Location: ../client/buyerhome.php');
+      echo $_SESSION['username'];
+      header('Location: ../client/buyerhome.php');
     }
   }
