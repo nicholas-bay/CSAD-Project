@@ -31,9 +31,6 @@
       header('Location: ../client/buyerhome.php');
     }
     else if (isset($_POST['update'])) {
-      echo $_SESSION['username'] . "<br>";
-      echo $username . '<br>';
-      echo $pwd . '<br>';
       $sql = 
         "UPDATE $tableuser SET
         username = '$username',
@@ -41,7 +38,25 @@
         WHERE username = '" . $_SESSION['username'] . "'";
       $conn->query($sql);
       $_SESSION['username'] = $username;
-      echo $_SESSION['username'];
       header('Location: ../client/buyerhome.php');
+    }
+    else if (isset($_POST['update'])) {
+      $sql = 
+        "UPDATE $tableuser SET
+        username = '$username',
+        password = '$pwd'
+        WHERE username = '" . $_SESSION['username'] . "'";
+      $conn->query($sql);
+      $_SESSION['username'] = $username;
+      header('Location: ../client/buyerhome.php');
+    }
+    else if (isset($_POST['delete'])) {
+      echo $_SESSION['username'];
+      $sql = 
+        "DELETE FROM $tableuser WHERE
+        username = '" . $_SESSION['username'] . "'";
+      $conn->query($sql);
+      $_SESSION['username'] = 'User';
+      header('Location: ../client/index.php');
     }
   }
