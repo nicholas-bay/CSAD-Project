@@ -5,6 +5,7 @@
 
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $conn = new mysqli($host, $user, $password, $db);
+
     if (isset($_POST['addupdate'])) {
       $name = $_POST['product-name'];
       $description = $_POST['product-description'];
@@ -19,29 +20,22 @@
       ";
       if ($conn->query($sql) == TRUE) echo "Sucessful";
       else echo $conn->error;
-      header('Location: ../client/sellerhome.php');
+      header('Location: ../client/home.php');
     }
+
     else if (isset($_POST['delete'])) {
-      $name = $_POST['product-name-delete'];
+      $name = $_POST['product-name'];
       $sql = "
         DELETE FROM $tableproduct WHERE name = '$name';
       ";
       if ($conn->query($sql) == TRUE) echo "Sucessful";
       else echo $conn->error;
-      header('Location: ../client/sellerhome.php');
+      header('Location: ../client/home.php');
     }
     else if (isset($_POST['search'])) {
       $name = $_POST['product-search'];
       $_SESSION['pointer'] = $name;
-      header('Location: ../client/buyerhome.php');
-    }
-    else if (isset($_POST['addcart'])) {
-      $_SESSION['product_count']++;
-      header('Location: ../client/buyerhome.php');
-    }
-    else if (isset($_POST['removecart'])) {
-      $_SESSION['product_count']--;
-      header('Location: ../client/buyerhome.php');
+      header('Location: ../client/home.php');
     }
   }
 ?>

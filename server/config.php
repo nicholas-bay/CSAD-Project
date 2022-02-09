@@ -5,5 +5,4 @@
   $db = 'shopee';
   $tableuser = 'users';
   $tableproduct = 'products';
-  $tablecart = 'cart'
 ?>

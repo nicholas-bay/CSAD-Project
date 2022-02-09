@@ -4,6 +4,12 @@
 .gradient-2 {
   background: linear-gradient(to right bottom, #FDA085,#F6D365)
 }
+.gradient-3 {
+  background: linear-gradient(to right bottom, #36BDFE, #D406FE)
+}
+.gradient-4 {
+  background: linear-gradient(to right bottom, #8867F9, #048FFF)
+}
 #navmenu li {
   margin-left: 20px;
   margin-right: 20px;
@@ -44,3 +50,7 @@ footer p {
   -webkit-animation-name: greywhite;
   -webkit-animation-duration: 3s; 
 }  
+
+#button-curve {
+  border-radius: 12px;
+}

@@ -7,6 +7,7 @@
     $conn = new mysqli($host, $user, $password, $db);
     $username = $_POST['username'];
     $pwd = $_POST['password'];
+
     if (isset($_POST['login'])) {
       $sql = "SELECT * FROM $tableuser";
       $dataset = $conn->query($sql);
@@ -14,21 +15,22 @@
         while ($row = $dataset->fetch_assoc()) {
           if ($row['username'] === $username && $row['password'] === $pwd) {
             $_SESSION['username'] = $username;
-            if ($row['type'] === 'buyer')
-              header('Location: ../client/buyerhome.php');
-            else
-              header('Location: ../client/sellerhome.php');
+            header('Location: ../client/home.php');
           }
         }
       }
     }
-    else if (isset($_POST['signupbuyer'])) {
+    else if (isset($_POST['signup'])) {
       $sql = 
         "INSERT INTO $tableuser
         VALUES ('$username', '$pwd', 'buyer')";
       $conn->query($sql);
       $_SESSION['username'] = $username;
-      header('Location: ../client/buyerhome.php');
+      header('Location: ../client/home.php');
+    }
+    else if (isset($_POST['logout'])) {
+      $_SESSION['username'] = 'User';
+      header('Location: ../client/home.php');
     }
     else if (isset($_POST['update'])) {
       $sql = 
@@ -38,7 +40,7 @@
         WHERE username = '" . $_SESSION['username'] . "'";
       $conn->query($sql);
       $_SESSION['username'] = $username;
-      header('Location: ../client/buyerhome.php');
+      header('Location: ../client/home.php');
     }
     else if (isset($_POST['update'])) {
       $sql = 
@@ -48,7 +50,7 @@
         WHERE username = '" . $_SESSION['username'] . "'";
       $conn->query($sql);
       $_SESSION['username'] = $username;
-      header('Location: ../client/buyerhome.php');
+      header('Location: ../client/home.php');
     }
     else if (isset($_POST['delete'])) {
       echo $_SESSION['username'];
