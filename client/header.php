@@ -42,9 +42,9 @@
             }
           }
         ?>
-        <!-- user -->
+        <!-- account -->
         <li class='nav-item' id='navitem'>
-          <a href="#user" class="nav-link" data-bs-toggle="offcanvas">
+          <a href="#account" class="nav-link" data-bs-toggle="offcanvas">
             <i class="bi bi-person"></i> <?php echo $_SESSION['username']; ?>
           </a>
         </li>

@@ -22,7 +22,6 @@
 
   <body class='pt-5 pb-5 gradient-3'>
     <?php include 'header.php'; ?>
-    <?php $conn = new mysqli($host, $user, $password, $db); ?>
     <?php include 'configureproduct.php' ?>
     <?php include 'cart.php'; ?>
     <?php include 'account.php'; ?>
