@@ -18,7 +18,7 @@
         ON DUPLICATE KEY UPDATE
         description = '$description', price = $price, count = $count, image = '$image' 
       ";
-      if ($conn->query($sql) == TRUE) echo "Sucessful";
+      if ($conn->query($sql) == TRUE) echo "Successful";
       else echo $conn->error;
       header('Location: ../client/home.php');
     }
@@ -28,7 +28,7 @@
       $sql = "
         DELETE FROM $tableproduct WHERE name = '$name';
       ";
-      if ($conn->query($sql) == TRUE) echo "Sucessful";
+      if ($conn->query($sql) == TRUE) echo "Successful";
       else echo $conn->error;
       header('Location: ../client/home.php');
     }
