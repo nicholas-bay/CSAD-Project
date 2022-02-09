@@ -121,8 +121,8 @@
                     <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                     <h5 class='card-text'>" . $row['description'] . "</h5>
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
-                    <input type='button' class='btn btn-warning' style='border-radius: 12px;' value='+' onclick=" . array_push($item, $row['name']) . "></input>
-                    <input type='button' class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
+                    <input type='button' class='btn btn-warning' style='border-radius: 12px; font-size: 15px;' value='+' onclick=" . array_push($item, $row['name']) . "></input>
+                    <input type='button' class='btn btn-warning' style='border-radius: 12px; font-size: 15px;' value='-'></input>
                     " . $_SESSION['product_count'] . " in cart
                   </div>
                 </div>
