@@ -29,6 +29,9 @@ footer p {
 }
 #productcard {
   transition: transform .2s;
+  width: 18rem;
+  margin: 30px;
+  border-radius: .5rem;
 }
 #productcard.card:hover {
   transform: scale(1.25);

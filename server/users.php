@@ -30,4 +30,14 @@
       $_SESSION['username'] = $username;
       header('Location: ../client/buyerhome.php');
     }
+    else if (isset($_POST['update'])) {
+      $sql = 
+        "UPDATE $tableuser SET
+        username = '$username',
+        password = '$pwd'
+        WHERE username = '$username'";
+      $conn->query($sql);
+      $_SESSION['username'] = $username;
+      // header('Location: ../client/buyerhome.php');
+    }
   }
