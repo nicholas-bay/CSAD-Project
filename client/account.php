@@ -1,3 +1,14 @@
+<style>
+  .err {
+    color: red;
+  }
+</style>
+
+<?php 
+$errMsg = $_SESSION['login_valid'];
+$pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+?>
+
 <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="account">
   <div class="offcanvas-header">
     <h1 class="offcanvas-title">Account</h1>
@@ -7,36 +18,39 @@
     <div class='container'>
       <div class='row d-flex justify-content-center align-items-center p-3'>
         <div class='card' style='border-radius: .5rem;'>
+          <span class="err" style="margin-top: 22px;">* Required Field</span>
           <form method='POST' action='../server/users.php'>
             <div class='row text-center'>
               <div class='card-body'>
-                <input type='text' name='username' placeholder='Username' required>
+                <input type='text' name='username' placeholder='Username' required disabled><span class="err"> *</span>
               </div>
             </div>
             <div class='row text-center'>
               <div class='card-body'>
-                <input type='text' name='password' placeholder='Password' required>
+                <input type='text' name='password' placeholder='Password' required disabled><span class="err"> *</span>
               </div>
             </div>
             <div class='row text-center'>
               <div class='card-body'>
-                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='login' value='Login'>
-                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='signup' value='Sign Up'>
+                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='login' value='Login' disabled>
+                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='signup' value='Sign Up' disabled>
               </div>
             </div>
           </form>
           <form method='POST' action='../server/users.php'>
             <div class='row text-center'>
               <div class='card-body'>
-                <input type='text' name='username' placeholder='Username' required>
+                <input type='text' name='username' placeholder='Username' required><span class="err"> *</span>
               </div>
             </div>
             <div class='row text-center'>
               <div class='card-body'>
-                <input type='text' name='password' placeholder='Password' required>
+                <input type='text' name='password' placeholder='Password' required><span class="err"> *</span>
               </div>
             </div>
             <div class='row text-center'>
+              <span class="err"><?php echo $errMsg; ?></span>
+              <?php $_SESSION['login_valid'] = ""; ?>
               <div class='card-body'>
                 <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='login' value='Login'>
                 <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='signup' value='Sign Up'>

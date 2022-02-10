@@ -15,6 +15,10 @@
         while ($row = $dataset->fetch_assoc()) {
           if ($row['username'] === $username && $row['password'] === $pwd) {
             $_SESSION['username'] = $username;
+            $_SESSION['login_valid'] = "";
+            header('Location: ../client/home.php');
+          } else {
+            $_SESSION['login_valid'] = "Invalid Username or Password.";
             header('Location: ../client/home.php');
           }
         }
@@ -30,16 +34,6 @@
     }
     else if (isset($_POST['logout'])) {
       $_SESSION['username'] = 'User';
-      header('Location: ../client/home.php');
-    }
-    else if (isset($_POST['update'])) {
-      $sql = 
-        "UPDATE $tableuser SET
-        username = '$username',
-        password = '$pwd'
-        WHERE username = '" . $_SESSION['username'] . "'";
-      $conn->query($sql);
-      $_SESSION['username'] = $username;
       header('Location: ../client/home.php');
     }
     else if (isset($_POST['update'])) {
