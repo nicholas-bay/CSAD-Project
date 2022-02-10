@@ -141,11 +141,11 @@
                   <div class="row pt-1 align-self-center">
                     <div class="col-6 mb-3">
                       <h6>Email</h6>
-                      <p class="text-muted">*********.20@ichat.sp.edu.sg</p>
+                      <p class="text-muted">hongweic09.20@ichat.sp.edu.sg</p>
                     </div>
                     <div class="col-6 mb-3">
                       <h6>Admission Number</h6>
-                      <p class="text-muted">P*******</p>
+                      <p class="text-muted">P2002372
                     </div>
                   </div>
                 </div>
