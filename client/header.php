@@ -25,7 +25,7 @@
                 if ($row['type'] == 'buyer')
                   echo "
                     <li class='nav-item' id='navitem'>
-                      <a href='#cart' class='nav-link' data-bs-toggle='offcanvas'>
+                      <a href='#cart' class='nav-link' data-bs-toggle='offcanvas' onclick=loaddata()>
                         <i class='bi bi-cart'></i> Cart
                       </a>
                     </li>

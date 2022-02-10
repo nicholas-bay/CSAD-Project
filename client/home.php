@@ -25,9 +25,6 @@
 
   <body class='pt-5 pb-5 gradient-3'>
     <?php include 'header.php'; ?>
-    <?php include 'configureproduct.php' ?>
-    <?php include 'cart.php'; ?>
-    <?php include 'account.php'; ?>
     <!-- display products -->
     <section class=' text-light p-5 text-right text-sm-start'>
       <div class=" container">
@@ -43,6 +40,7 @@
               else $_SESSION['color'] = 'background-color: white';
               echo "
               <script>Object.assign(product, {'" . $row['name'] . "': 0});</script>
+              <script>console.log()</script>
               <div class='col-sm-3'>
                 <div class='card' id='productcard' style='width: 18rem; margin: 30px;" . $_SESSION['color'] . "'>
                   <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' class='img-thumnail' />
@@ -52,7 +50,7 @@
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
                     <input type='button' onclick=add('" . $row['name'] . "') class='btn btn-warning' style='border-radius: 12px;' value='+'></input>
                     <input type='button' onclick=remove('" . $row['name'] . "') class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
-                    <div id='" . $row['name'] . "'>0</div> in cart
+                    <div id='" . $row['name'] . "'>0</div>in cart
                   </div>
                 </div>
               </div>
@@ -63,12 +61,11 @@
           $_SESSION['pointer'] = NULL;
           ?>
           <script>
-            function add(name, state) {
+            function add(name, price,) {
               product[name]++;
               document.getElementById(name).innerHTML = product[name];
             }
-
-            function remove(name, state) {
+            function remove(name) {
               if (product[name] > 0) product[name]--;
               document.getElementById(name).innerHTML = product[name];
             }
@@ -76,6 +73,9 @@
         </div>
       </div>
     </section>
+    <?php include 'configureproduct.php' ?>
+    <?php include 'cart.php'; ?>
+    <?php include 'account.php'; ?>
     <?php include 'footer.php' ?>
   </body>
 
