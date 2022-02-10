@@ -6,5 +6,4 @@
   $tableuser = 'users';
   $tableproduct = 'products';
   $tablefeedback = 'feedback';
-  $test = 0;
 ?>
