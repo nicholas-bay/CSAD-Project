@@ -1,3 +1,15 @@
+<style>
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 1;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+</style>
 <div class="offcanvas offcanvas-start gradient-4" id="configure">
   <div class="offcanvas-header">
     <h1 class="offcanvas-title">Product</h1>
@@ -49,10 +61,10 @@
       </div>
       <div class='row d-flex justify-content-center align-items-center p-3'>
         <div class='card gradient-2' style='border-radius: .5rem;'>
-        <div class='row card-body'>
-          <h2>Feedback</h2>
-        </div>
-        <?php
+          <div class='row card-body'>
+            <h2>Feedback</h2>
+          </div>
+          <?php
           $sql = "SELECT * FROM $tablefeedback";
           $result = $conn->query($sql);
           if (!empty($result) && $result->num_rows > 0) {
@@ -65,7 +77,7 @@
               ";
             }
           }
-        ?>
+          ?>
         </div>
       </div>
     </div>
