@@ -45,6 +45,7 @@
     else if (isset($_POST['logout'])) {
       $_SESSION['username'] = 'User';
       header('Location: ../client/home.php');
+      $_SESSION['userstate'] = NULL;
     }
     else if (isset($_POST['update'])) {
       $sql = 

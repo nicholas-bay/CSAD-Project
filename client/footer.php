@@ -4,7 +4,7 @@
       <li>
         <p>
           About Us:&emsp;&emsp;
-          <a href='aboutUs.php' style="color: grey; text-decoration: none;">Developers</a>
+          <a href='aboutUs.php' style="color: grey; text-decoration: none;">Developers, How to Use the Website and Company Information</a>
         </p>
       </li>
     </ul>
