@@ -19,18 +19,19 @@ $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACH
       <div class='row d-flex justify-content-center align-items-center p-3'>
         <div class='card' style='border-radius: .5rem;'>
           <span class="err" style="margin-top: 22px;">* Required Field</span>
-          <form method='POST' action='../server/users.php'>
-            <div class='row text-center' hidden>
+          <!-- this form get error, always redirect to products.php -->
+          <form method='POST' action='../server/users.php' hidden>
+            <div class='row text-center'>
               <div class='card-body'>
                 <input type='text' name='username' placeholder='Username' required disabled hidden />
               </div>
             </div>
-            <div class='row text-center' hidden>
+            <div class='row text-center'>
               <div class='card-body'>
                 <input type='text' name='password' placeholder='Password' required disabled hidden />
               </div>
             </div>
-            <div class='row text-center' hidden>
+            <div class='row text-center'>
               <div class='card-body'>
                 <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='login' value='Login' disabled hidden />
                 <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='signup' value='Sign Up' disabled hidden />
