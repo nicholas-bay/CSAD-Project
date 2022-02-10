@@ -1,4 +1,5 @@
 <navbar class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
+  &emsp;&emsp;<?php echo "<span style='color: white;'><i class='bi bi-handbag'></i>\tShopee</span>" ?>
   <div class="container">
     <!-- toggle navmenu when small screen -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu">

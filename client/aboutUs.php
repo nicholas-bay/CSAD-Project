@@ -16,24 +16,17 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class='pt-5 pb-5'>
+<body class='pt-5 pb-5' style="background-color: #E0E0E0;">
   <!-- header -->
   <navbar class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-    <div class="container">
-      <!-- toggle navmenu when small screen -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu">
-        <span class='navbar-toggler-icon'></span>
-      </button>
-      <div class="collapse navbar-collapse" id='navmenu'>
-        <ul class="navbar-nav mx-auto my-auto">
-          <li class='nav-item' id='navitem'>
-            <a href="home.php" class="nav-link">
-              <i class="bi bi-house"></i> Home
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    &emsp;&emsp;<?php echo "<button id='btn_home' style='color: white; background-color: #212121; border: none;'>
+    <i class='bi bi-handbag'></i>\tShopee</button>" ?>
+    <script>
+      var btn = document.getElementById('btn_home');
+      btn.addEventListener('click', function() {
+        document.location.href = "home.php";
+      });
+    </script>
   </navbar>
   <!-- developers -->
   <section class="vh-100">
@@ -42,8 +35,8 @@
         <div class="col col-lg-6 mb-4 mb-lg-0">
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
-              <div class="col-md-4 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../../assets/nicholas.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
+              <div class="col-md-4 gradient-1 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <img src="../assets/nicholas.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Nicholas Bay</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
@@ -71,7 +64,7 @@
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
               <div class="col-md-4 gradient-1 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../../assets/eugene.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
+                <img src="../assets/eugene.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Eugene Quek</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
@@ -101,7 +94,7 @@
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
               <div class="col-md-4 gradient-1 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../../assets/ephraim.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
+                <img src="../assets/ephraim.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Ephraim Yee</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
@@ -129,7 +122,7 @@
           <div class="card mb-3" style="border-radius: .5rem;">
             <div class="row g-0">
               <div class="col-md-4 gradient-1 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../../assets/hongwei.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
+                <img src="../assets/hongwei.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
                 <h5>Chung Hong Wei</h5>
                 <p>Diploma of Computer Engineering</p>
                 <i class="far fa-edit mb-5"></i>
@@ -157,7 +150,7 @@
     </div>
   </section>
   <!-- website -->
-  <section class="vh-100" style="background-color: #E0E0E0;">
+  <section class="vh-100">
     <div class="container py-3 h-100">
       <div class="row d-flex justify-content-center align-items-center p-5">
         <iframe width="350px" height="275px" src="../assets/Baking Mayhem-Full Version.mp4"></iframe>

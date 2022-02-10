@@ -52,17 +52,14 @@
                       <h5 class='card-text'>" . $row['description'] . "</h5>
                       <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
                       <form method='POST' action='../server/products.php'>
-                        <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
-              ";
+                        <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>";
               if ($_SESSION['userstate'] == 'buyer') {
-                echo    "<input type='submit' name='add' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Add'></input>";
-                echo    "<input type='submit' name='remove' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Remove'></input>";
+                echo "<input type='submit' name='add' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Add'></input>";
+                echo "<input type='submit' name='remove' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Remove'></input>";
               }
-              echo "
-                      <textarea placeholder='Feedback' name='feedback-details'></textarea>
+              echo "  <textarea placeholder='Feedback' name='feedback-details'></textarea>
                       <input type='submit' name='feedback' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='FeedBack'></input>
                     </form>
-                    
                   </div>
                 </div>
               </div>

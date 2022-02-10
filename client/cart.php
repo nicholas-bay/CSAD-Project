@@ -21,8 +21,8 @@
                       <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' style='width: 100px; height: 100px;' class='img-thumnail' />
                     </div>
                     <div class='col text-end'>
-                      <h6 class='card-text'>" . $row['price'] . "</h6>
-                      <h6 class='card-text'>" . $value . "</h6>
+                      <h6 class='card-text'>Cost: $" . $row['price'] . "</h6>
+                      <h6 class='card-text'>No. of items: " . $value . "</h6>
                     </div>
                   </div>
                 </div>
@@ -34,7 +34,7 @@
       echo "</div>
         <div class='row pt-4'>
           <div class='col-8'>
-          <h3>Total: $$total</h3>
+          <h3>Total cost: $$total</h3>
           </div>
           <div class='col-8'>
             <input type='submit' name='order' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Place Order'></input>
