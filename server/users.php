@@ -2,6 +2,7 @@
   include 'config.php';
   session_start();
   $username = $pwd = '';
+  $login_valid = 0;
   
   if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     $conn = new mysqli($host, $user, $password, $db);
@@ -13,11 +14,13 @@
       $dataset = $conn->query($sql);
       if ($dataset->num_rows > 0) {
         while ($row = $dataset->fetch_assoc()) {
-          if ($row['username'] === $username && $row['password'] === $pwd) {
+          if ($username === $row['username'] && $pwd === $row['password']) {
+            $login_valid = 1;
             $_SESSION['username'] = $username;
             $_SESSION['login_valid'] = "";
             header('Location: ../client/home.php');
-          } else {
+          }
+          if ($login_valid == 0) {
             $_SESSION['login_valid'] = "Invalid Username or Password.";
             header('Location: ../client/home.php');
           }
@@ -25,12 +28,19 @@
       }
     }
     else if (isset($_POST['signup'])) {
-      $sql = 
+      $sql_duplicate = "SELECT * FROM $tableuser WHERE username = '$username'";
+      $check = $conn->query($sql_duplicate);
+      if ($check->num_rows > 0) {
+        $_SESSION['login_valid'] = "Duplicate Username Found.";
+        header('Location: ../client/home.php');
+      } else {
+        $sql = 
         "INSERT INTO $tableuser
         VALUES ('$username', '$pwd', 'buyer')";
-      $conn->query($sql);
-      $_SESSION['username'] = $username;
-      header('Location: ../client/home.php');
+        $conn->query($sql);
+        $_SESSION['username'] = $username;
+        header('Location: ../client/home.php');
+      }
     }
     else if (isset($_POST['logout'])) {
       $_SESSION['username'] = 'User';
