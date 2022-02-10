@@ -48,9 +48,10 @@
                     <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                     <h5 class='card-text'>" . $row['description'] . "</h5>
                     <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
-                    <input type='button' onclick=add('" . $row['name'] . "') class='btn btn-warning' style='border-radius: 12px;' value='+'></input>
-                    <input type='button' onclick=remove('" . $row['name'] . "') class='btn btn-warning' style='border-radius: 12px;' value='-'></input>
-                    <div id='" . $row['name'] . "'>0</div>in cart
+                    <form method='POST' action='../server/products.php'>
+                      <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
+                      <input type='submit' name='count' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Add to Cart'></input>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -60,16 +61,6 @@
           }
           $_SESSION['pointer'] = NULL;
           ?>
-          <script>
-            function add(name, price,) {
-              product[name]++;
-              document.getElementById(name).innerHTML = product[name];
-            }
-            function remove(name) {
-              if (product[name] > 0) product[name]--;
-              document.getElementById(name).innerHTML = product[name];
-            }
-          </script>
         </div>
       </div>
     </section>
