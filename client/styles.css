@@ -43,8 +43,8 @@ footer p {
   transform: scale(1.25);
 }
 @-webkit-keyframes greywhite {  
-  0% { background-color: #A9A9A9; }
-  100% { background-color: white; }
+  0% { background-color: black; }
+  100% { background-color: #A9A9A9; }
 }
 #blinkingsearch {
   -webkit-animation-name: greywhite;

@@ -43,7 +43,7 @@
             for ($count = 1; $row = $result->fetch_assoc(); $count++) {
               if ($count == 1 || ($count - 1) % 4 == 0) echo "<div class='row'>";
               if ($row['name'] == $_SESSION['pointer']) $_SESSION['color'] = '-webkit-animation-name: greywhite; -webkit-animation-duration: 2s;';
-              else $_SESSION['color'] = 'background-color: white';
+              else $_SESSION['color'] = 'background-color: black';
               echo "
                 <div class='col-sm-3'>
                   <div class='card bg-dark border-4 border-dark' id='productcard' style='width: 18rem; height: 35rem; margin: 30px;" . $_SESSION['color'] . "'>
