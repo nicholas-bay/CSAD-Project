@@ -53,5 +53,16 @@
       print_r($_SESSION['product_count']);
       header('Location: ../client/home.php');
     }
+    else if (isset($_POST['feedback'])) {
+    $name = $_POST['product-name'];
+    $feedback = $_POST['feedback-details'];
+    $sql = "
+        INSERT INTO $tablefeedback
+        VALUES ('$name', '$feedback')
+      ";
+    if ($conn->query($sql) == TRUE) echo "Successful";
+    else echo $conn->error;
+    header('Location: ../client/home.php');
+    }
   }
 ?>

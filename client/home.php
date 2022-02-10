@@ -59,7 +59,10 @@
                 echo    "<input type='submit' name='remove' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Remove'></input>";
               }
               echo "
+                      <textarea placeholder='Feedback' name='feedback-details'></textarea>
+                      <input type='submit' name='feedback' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='FeedBack'></input>
                     </form>
+                    
                   </div>
                 </div>
               </div>

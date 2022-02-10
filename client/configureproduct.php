@@ -44,6 +44,28 @@
           </form>
           <form method="POST" action="../server/products.php" enctype="multipart/form-data">
             <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='delete' value="Delete">
+          </form>
+        </div>
+      </div>
+      <div class='row d-flex justify-content-center align-items-center p-3'>
+        <div class='card gradient-2' style='border-radius: .5rem;'>
+        <div class='row card-body'>
+          <h2>Feedback</h2>
+        </div>
+        <?php
+          $sql = "SELECT * FROM $tablefeedback";
+          $result = $conn->query($sql);
+          if (!empty($result) && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              echo "
+                <div class='row card-body'>
+                  <h4 class='card-title text-start'>  " . $row['name'] . "</h4>
+                  <div class='card-text text-end'>  " . $row['feedback'] . "</div>
+                </div>
+              ";
+            }
+          }
+        ?>
         </div>
       </div>
     </div>

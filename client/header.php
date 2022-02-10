@@ -34,7 +34,7 @@
                   echo "
                     <li class='nav-item' id='navitem'>
                       <a href='#configure' class='nav-link' data-bs-toggle='offcanvas'>
-                        <i class='bi bi-plus'></i> Add Product
+                        <i class='bi bi-plus'></i> Product
                       </a>
                     </li>
                   ";

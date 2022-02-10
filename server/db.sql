@@ -11,6 +11,9 @@ CREATE TABLE products (
   price FLOAT NOT NULL,
   count SMALLINT NOT NULL,
   image LONGBLOB NOT NULL);
+CREATE TABLE feedback (
+  name VARCHAR(50),
+  feedback TEXT);
 INSERT INTO users VALUES
   ('buyer', '123', 'buyer'),
   ('admin', '123', 'seller');
