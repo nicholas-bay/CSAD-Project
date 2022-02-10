@@ -45,7 +45,7 @@
               else $_SESSION['color'] = 'background-color: white';
               echo "
                 <div class='col-sm-3'>
-                  <div class='card' id='productcard' style='width: 18rem; margin: 30px;" . $_SESSION['color'] . "'>
+                  <div class='card' id='productcard' style='width: 18rem; height: 35rem; margin: 30px;" . $_SESSION['color'] . "'>
                     <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' class='img-thumnail' />
                     <div class='card-body'>
                       <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
