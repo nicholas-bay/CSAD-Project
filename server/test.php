@@ -1,10 +1,17 @@
 <?php
-$array = array("key1" => "value1", "key2" => "value2");
+$array = array();
+array_push($array, 'nicholas');
+array_push($array, 'HONGWEI');
+array_push($array, 'HONGWEI');
+array_push($array, 'HOGN');
+array_push($array, 'RYAN');
 print_r($array);
 echo "<br>";
-unset($array['key1']);
-print_r($array);
+$test = array_count_values($array);
 echo "<br>";
-unset($array['key2']);
-print_r($array);
+print_r($test);
+echo "<br>";  
+echo $test['nicholas'];
+echo "<br>";
+print_r($test);
 ?>

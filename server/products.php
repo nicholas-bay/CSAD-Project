@@ -42,7 +42,14 @@
       print_r($_SESSION['product_count']);
       header('Location: ../client/home.php');
     }
-    else if (isset($_POST['add'])) {
+    else if (isset($_POST['remove'])) {
+      print_r($_SESSION['product_count']);
+      foreach ($_SESSION['product_count'] as $key => $value) {
+        if ($value == $_POST['product-name']) {
+          unset($_SESSION['product_count'][$key]);
+          break;
+        }
+      }
       print_r($_SESSION['product_count']);
       header('Location: ../client/home.php');
     }

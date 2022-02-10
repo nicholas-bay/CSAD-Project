@@ -27,6 +27,14 @@
       <div class=" container">
         <div class="d-flex justify-content-center align-items-center">
           <?php
+            $sql = "SELECT * FROM $tableuser where username = '" . $_SESSION['username'] . "'";
+            $result = $conn->query($sql);
+            if (!empty($result) && $result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                if ($row['type'] == 'buyer') $_SESSION['userstate'] = 'buyer';
+                else $_SESSION['userstate'] = NULL;
+              }
+            }
           $sql = "SELECT * FROM $tableproduct";
           $result = $conn->query($sql);
           if (!empty($result) && $result->num_rows > 0) {
@@ -46,7 +54,7 @@
                       <form method='POST' action='../server/products.php'>
                         <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
               ";
-              if ($_SESSION['username'] != 'User') {
+              if ($_SESSION['userstate'] == 'buyer') {
                 echo    "<input type='submit' name='add' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Add'></input>";
                 echo    "<input type='submit' name='remove' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Remove'></input>";
               }

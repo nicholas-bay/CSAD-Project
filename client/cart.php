@@ -16,13 +16,14 @@
               <div class='card'>
                 <div class='card-body'>
                   <div class='row'>
-                  <div class='col'>
-                    <h4 class='card-title'>" . $row['name'] . "</h4>
-                    <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' style='width: 100px; height: 100px;' class='img-thumnail' />
-                  </div>
-                  <div class='col text-end'>
-                    <h6 class='card-text'>" . $row['price'] . "</h6>
-                    <h6 class='card-text'>" . $value . "</h6>
+                    <div class='col'>
+                      <h4 class='card-title'>" . $row['name'] . "</h4>
+                      <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' style='width: 100px; height: 100px;' class='img-thumnail' />
+                    </div>
+                    <div class='col text-end'>
+                      <h6 class='card-text'>" . $row['price'] . "</h6>
+                      <h6 class='card-text'>" . $value . "</h6>
+                    </div>
                   </div>
                 </div>
               </div>
