@@ -1,18 +1,6 @@
-<style>
-  input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 1;
-  }
-
-  /* Firefox */
-  input[type=number] {
-    -moz-appearance: textfield;
-  }
-</style>
 <div class="offcanvas offcanvas-start gradient-4" id="configure">
   <div class="offcanvas-header">
-    <h1 class="offcanvas-title">Product</h1>
+    <h1 class="offcanvas-title text-white">Product</h1>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
   </div>
   <div class="offcanvas-body">
@@ -21,23 +9,23 @@
         <div class='card gradient-2' style='border-radius: .5rem;'>
           <form method="POST" action="../server/products.php" enctype="multipart/form-data">
             <div class='row text-center card-body'>
-              <label class='form-label'>Name</label>
+              <label class='form-label text-white'>Name</label>
               <input type="text" name="product-name" required />
             </div>
             <div class='row text-center card-body'>
-              <label class='form-label'>Description</label>
+              <label class='form-label text-white'>Description</label>
               <textarea name="product-description" rows='3' required></textarea>
             </div>
             <div class='row text-center card-body'>
-              <label class='form-label'>Price</label>
+              <label class='form-label text-white'>Price</label>
               <input type="number" name="product-price" required />
             </div>
             <div class='row text-center card-body'>
-              <label class='form-label'>Count</label>
+              <label class='form-label text-white'>Count</label>
               <input type="number" name="product-count" required />
             </div>
             <div class='row text-center card-body justify-content-center'>
-              <label class='form-label'>Image</label>
+              <label class='form-label text-white'>Image</label>
               <input type="file" class='form-control' onchange="previewFile()" name="product-image" accept="image/*" required><br>
               <img id="product-image-preview" style="width: 200px; height: 200px;" />
               <script>
@@ -52,10 +40,10 @@
                 }
               </script>
             </div>
-            <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='addupdate' value="Add / Update">
+            <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='addupdate' value="Add / Update">
           </form>
           <form method="POST" action="../server/products.php" enctype="multipart/form-data">
-            <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='delete' value="Delete">
+            <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='delete' value="Delete">
           </form>
         </div>
       </div>

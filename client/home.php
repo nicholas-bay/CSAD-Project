@@ -18,6 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
   </head>
 
   <body class='pt-5 pb-5 gradient-3'>
@@ -27,14 +28,14 @@
       <div class=" container">
         <div class="d-flex justify-content-center align-items-center">
           <?php
-            $sql = "SELECT * FROM $tableuser where username = '" . $_SESSION['username'] . "'";
-            $result = $conn->query($sql);
-            if (!empty($result) && $result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                if ($row['type'] == 'buyer') $_SESSION['userstate'] = 'buyer';
-                else $_SESSION['userstate'] = NULL;
-              }
+          $sql = "SELECT * FROM $tableuser where username = '" . $_SESSION['username'] . "'";
+          $result = $conn->query($sql);
+          if (!empty($result) && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+              if ($row['type'] == 'buyer') $_SESSION['userstate'] = 'buyer';
+              else $_SESSION['userstate'] = NULL;
             }
+          }
           $sql = "SELECT * FROM $tableproduct";
           $result = $conn->query($sql);
           if (!empty($result) && $result->num_rows > 0) {
@@ -45,10 +46,10 @@
               else $_SESSION['color'] = 'background-color: white';
               echo "
                 <div class='col-sm-3'>
-                  <div class='card' id='productcard' style='width: 18rem; height: 35rem; margin: 30px;" . $_SESSION['color'] . "'>
+                  <div class='card bg-dark border-4 border-dark' id='productcard' style='width: 18rem; height: 35rem; margin: 30px;" . $_SESSION['color'] . "'>
                     <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' class='img-thumnail' />
                     <div class='card-body'>
-                      <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
+                      <h5 class='card-title'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                       <h5 class='card-text'>" . $row['description'] . "</h5>
                       <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
                       <form method='POST' action='../server/products.php'>

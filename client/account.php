@@ -53,15 +53,15 @@ $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACH
               <span class="err"><?php echo $errMsg; ?></span>
               <?php $_SESSION['login_valid'] = ""; ?>
               <div class='card-body'>
-                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='login' value='Login'>
-                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='signup' value='Sign Up'>
+                <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='login' value='Login'>
+                <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='signup' value='Sign Up'>
               </div>
             </div>
           </form>
           <div class='row text-center'>
             <div class='card-body'>
               <form method='POST' action='../server/users.php'>
-                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='logout' value='Log Out' <?php if ($_SESSION['username'] == 'User') echo 'disabled'; ?>>
+                <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='logout' value='Log Out' <?php if ($_SESSION['username'] == 'User') echo 'disabled'; ?>>
               </form>
             </div>
           </div>
@@ -104,8 +104,8 @@ $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACH
                 </div>
                 <div class='row text-center'>
                   <div class='card-body'>
-                    <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='update' value='Update'>
-                    <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='delete' value='Delete'>
+                    <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='update' value='Update'>
+                    <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='delete' value='Delete'>
                   </div>
                 </div>
               </form>
