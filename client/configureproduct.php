@@ -18,11 +18,11 @@
             </div>
             <div class='row text-center card-body'>
               <label class='form-label'>Price</label>
-              <input type="text" name="product-price" required />
+              <input type="number" name="product-price" required />
             </div>
             <div class='row text-center card-body'>
               <label class='form-label'>Count</label>
-              <input type="text" name="product-count" required />
+              <input type="number" name="product-count" required />
             </div>
             <div class='row text-center card-body justify-content-center'>
               <label class='form-label'>Image</label>
