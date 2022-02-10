@@ -18,9 +18,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
-    <script>
-      var product = {};
-    </script>
   </head>
 
   <body class='pt-5 pb-5 gradient-3'>
@@ -39,23 +36,26 @@
               if ($row['name'] == $_SESSION['pointer']) $_SESSION['color'] = '-webkit-animation-name: greywhite; -webkit-animation-duration: 2s;';
               else $_SESSION['color'] = 'background-color: white';
               echo "
-              <script>Object.assign(product, {'" . $row['name'] . "': 0});</script>
-              <script>console.log()</script>
-              <div class='col-sm-3'>
-                <div class='card' id='productcard' style='width: 18rem; margin: 30px;" . $_SESSION['color'] . "'>
-                  <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' class='img-thumnail' />
-                  <div class='card-body'>
-                    <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
-                    <h5 class='card-text'>" . $row['description'] . "</h5>
-                    <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
-                    <form method='POST' action='../server/products.php'>
-                      <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
-                      <input type='submit' name='count' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Add to Cart'></input>
+                <div class='col-sm-3'>
+                  <div class='card' id='productcard' style='width: 18rem; margin: 30px;" . $_SESSION['color'] . "'>
+                    <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' class='img-thumnail' />
+                    <div class='card-body'>
+                      <h5 class='card-title text-dark'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
+                      <h5 class='card-text'>" . $row['description'] . "</h5>
+                      <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
+                      <form method='POST' action='../server/products.php'>
+                        <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
+              ";
+              if ($_SESSION['username'] != 'User') {
+                echo    "<input type='submit' name='add' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Add'></input>";
+                echo    "<input type='submit' name='remove' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Remove'></input>";
+              }
+              echo "
                     </form>
                   </div>
                 </div>
               </div>
-            ";
+              ";
               if ($count % 4 == 0) echo "</div>";
             }
           }

@@ -37,9 +37,13 @@
       $_SESSION['pointer'] = $name;
       header('Location: ../client/home.php');
     }
-    else if (isset($_POST['count'])) {
+    else if (isset($_POST['add'])) {
       array_push($_SESSION['product_count'], $_POST['product-name']);
-      print_r(array_count_values($_SESSION['product_count']));
+      print_r($_SESSION['product_count']);
+      header('Location: ../client/home.php');
+    }
+    else if (isset($_POST['add'])) {
+      print_r($_SESSION['product_count']);
       header('Location: ../client/home.php');
     }
   }
