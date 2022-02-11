@@ -33,13 +33,13 @@
           if ($_SESSION['userstate'] == 'buyer' && $row['count'] > 0)
             echo "  <input type='submit' name='add' class='btn btn-cus justify content-center' value='Add to Cart'>";
           echo "
-                  <input type='submit' name='feedback' class='btn btn-cus justify content-center' value='FeedBack'>
-                </form>
+                    <input type='submit' name='feedback' class='btn btn-cus justify content-center' value='FeedBack'>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
           ";
-          if ($count % 4 == 0) echo "</div>";
+          if ($count % 4 == 0) echo "</div></div>";
         }
       }
       $_SESSION['pointer'] = NULL;

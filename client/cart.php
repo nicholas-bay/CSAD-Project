@@ -56,7 +56,7 @@
     else if (!empty($_SESSION['invoice']))
     echo "
         <div class='row pt-4'>
-            <h3 class='text-white'>Check folder for invoice</h3>
+            <h3 class='text-dark'>Check folder for invoice</h3>
         </div>
       </div>
     ";

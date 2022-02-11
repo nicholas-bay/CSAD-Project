@@ -15,20 +15,20 @@
             <div class='row text-center card-body'>
               <div class='col-6'>
                 <label class='form-label'>Price</label>
-                <input type="number" name="product-price" style='width: 150px;' required />
+                <input type="number" name="product-price" style='width: 150px;'/>
               </div>
               <div class='col-6'>
                 <label class='form-label'>Count</label>
-                <input type="number" name="product-count" style='width: 150px;' required />
+                <input type="number" name="product-count" style='width: 150px;'/>
               </div>
             </div>
             <div class='row text-center card-body'>
               <label class='form-label'>Description</label>
-              <textarea name="product-description" rows='3' required></textarea>
+              <textarea name="product-description" rows='3'></textarea>
             </div>
             <div class='row text-center card-body justify-content-center'>
               <label class='form-label'>Image</label>
-              <input type="file" class='form-control' onchange="previewFile()" name="product-image" accept="image/*" required><br>
+              <input type="file" class='form-control' onchange="previewFile()" name="product-image" accept="image/*"><br>
               <img id="product-image-preview" style="width: 200px; height: 200px;" />
               <script>
                 function previewFile() {
@@ -43,8 +43,6 @@
               </script>
             </div>
             <input type='submit' class='btn btn-cus' name='addupdate' value="Add / Update">
-          </form>
-          <form method="POST" action="../server/products.php" enctype="multipart/form-data">
             <input type='submit' class='btn btn-cus' name='delete' value="Delete">
           </form>
         </div>

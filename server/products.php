@@ -22,7 +22,6 @@
       else echo $conn->error;
       header('Location: ../client/home.php');
     }
-
     else if (isset($_POST['delete'])) {
       $name = $_POST['product-name'];
       $sql = "
@@ -80,31 +79,31 @@
       header('Location: ../client/home.php');
     }
     else if (isset($_POST['feedback'])) {
-    $name = $_POST['product-name'];
-    $feedback = $_POST['feedback-details'];
-    $sql = "
-        INSERT INTO $tablefeedback
-        VALUES ('$name', '$feedback')
-      ";
-    if ($conn->query($sql) == TRUE) echo "Successful";
-    else echo $conn->error;
-    header('Location: ../client/home.php');
+      $name = $_POST['product-name'];
+      $feedback = $_POST['feedback-details'];
+      $sql = "
+          INSERT INTO $tablefeedback
+          VALUES ('$name', '$feedback')
+        ";
+      if ($conn->query($sql) == TRUE) echo "Successful";
+      else echo $conn->error;
+      header('Location: ../client/home.php');
     }
     else if (isset($_POST['order'])) {
       $txt = $_SESSION['username'] . " has bought:\n\n";
       $total = 0;
-    foreach (array_count_values($_SESSION['product_count']) as $key => $value) {
-      $sql = "
-        SELECT * FROM $tableproduct WHERE name = '$key';
-      ";
-      $result = $conn->query($sql);
-      if (!empty($result) && $result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-          $txt .= $key . ":\t$" . $row['price'] . "\n\t\tCount: " . $value . "\n";
-          $total += ($row['price'] * $value);
+      foreach (array_count_values($_SESSION['product_count']) as $key => $value) {
+        $sql = "
+          SELECT * FROM $tableproduct WHERE name = '$key';
+        ";
+        $result = $conn->query($sql);
+        if (!empty($result) && $result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            $txt .= $key . ":\t$" . $row['price'] . "\n\t\tCount: " . $value . "\n";
+            $total += ($row['price'] * $value);
+          }
         }
       }
-    }
       $txt .= "\nTotal: $" . $total;
       $myfile = fopen("invoice.txt", "w") or die("Unable to open file!");
       fwrite($myfile, $txt);
