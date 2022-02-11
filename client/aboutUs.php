@@ -90,7 +90,7 @@
                     give them transparency in their payments.</p>
                 </div>
                 <div class="row pt-1">
-                  <h6>Contact Us At:</h6>
+                  <h6>Contact Us</h6>
                   <p class="text-muted">6775 1133<br>
                   <a href="mailto:contactus@sp.edu.sg">contactus@sp.edu.sg</a></p>
                 </div>
