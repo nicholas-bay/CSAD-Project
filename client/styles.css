@@ -13,8 +13,9 @@
 .gradient-argon {
   background: linear-gradient(to right bottom, #03001e, #7303c0, #FFFFFF, #fdeff9);
 }
-.gradient-3 {
-  background: linear-gradient(to right bottom, #2B5EF8, #F3F4F7)
+.gradient-aboutus {
+  height: 3000px;
+  background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%);
 }
 .gradient-4 {
   background: linear-gradient(to right bottom, #03090B,#81AEF9)
@@ -44,15 +45,6 @@ footer p {
   font-weight: 400;
   letter-spacing: -.01em;
   font-family: inherit;
-}
-#productcard {
-  transition: transform .2s;
-  width: 18rem;
-  margin: 30px;
-  border-radius: .5rem;
-}
-#productcard.card:hover {
-  transform: scale(1.25);
 }
 @-webkit-keyframes greywhite {  
   0% { background-color: #A9A9A9; }
@@ -85,9 +77,13 @@ body {
 }
 .home-card {
   transition: transform .2s;
-  border-radius: .5rem;
+  border-radius: .5rem; 
   width: 18rem;
   margin: 30px;
+  background-color: #353537;
+}
+.home-card.card:hover {
+  transform: scale(1.25);
 }
 .btn-cus {
   border-radius: 12px;

@@ -21,19 +21,19 @@
           echo "
             <div class='col-sm-3'>
               <div class='card border-4 border-dark home-card bg-dark' style='" . $_SESSION['color'] . "'>
-                <img class='img-thumnail' src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' />
+                <img class='img-thumnail' src='data:image/jpeg;base64," . base64_encode($row["image"]) . "'>
                 <div class='card-body'>
                   <h5 class='card-title'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                   <h5 class='card-text'>" . $row['description'] . "</h5>
                   <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
                   <form method='POST' action='../server/products.php'>
-                    <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
+                    <input type='hidden' name='product-name' value='" . $row['name'] . "'>
                     <textarea placeholder='Feedback' name='feedback-details'></textarea>
           ";
           if ($_SESSION['userstate'] == 'buyer' && $row['count'] > 0)
-            echo "  <input type='submit' name='add' class='btn justify content-center btn-cus' value='Add to Cart'></input>";
+            echo "  <input type='submit' name='add' class='btn btn-cus justify content-center' value='Add to Cart'>";
           echo "
-                  <input type='submit' name='feedback' class='btn btn-cus justify content-center' value='FeedBack'></input>
+                  <input type='submit' name='feedback' class='btn btn-cus justify content-center' value='FeedBack'>
                 </form>
               </div>
             </div>

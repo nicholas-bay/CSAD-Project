@@ -24,9 +24,9 @@
                       <h6 class='card-text'>Cost: $" . $row['price'] . "</h6>
                       <h6 class='card-text'>No. of items: " . $value . "</h6>
                       <form method='POST' action='../server/products.php'>
-                        <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
-                        <input type='submit' name='add' class='btn btn-cus justify content-center'' value='+'></input>
-                        <input type='submit' name='remove' class='btn btn-cus justify content-center' value='-'></input>
+                        <input type='hidden' name='product-name' value='" . $row['name'] . "'>
+                        <input type='submit' name='add' class='btn btn-cus justify content-center'' value='+'>
+                        <input type='submit' name='remove' class='btn btn-cus justify content-center' value='-'>
                       </form> 
                     </div>
                   </div>
@@ -47,8 +47,8 @@
           </div>
           <div class='col-8 '>
           <form method='POST' action='../server/products.php'>
-            <input type='submit' name='order' class='btn justify content-center btn-cus' value='Place Order'></input>
-            <input type='submit' name='clearorder' class='btn justify content-center btn-cus' value='Clear Order'></input>
+            <input type='submit' name='order' class='btn justify content-center btn-cus' value='Place Order'>
+            <input type='submit' name='clearorder' class='btn justify content-center btn-cus' value='Clear Order'>
           </form>
         </div>
       </div>

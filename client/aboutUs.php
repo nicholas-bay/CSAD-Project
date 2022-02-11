@@ -17,130 +17,87 @@
   <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 </head>
 
-<body class='pt-5 pb-5 gradient-2'>
-  <!-- header -->
+<body class='pt-5 pb-5 gradient-argon'>
   <navbar class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-    &emsp;&emsp;<?php echo "<button id='btn_home' style='color: white; background-color: #212121; border: none;'>
-    <i class='bi bi-handbag'></i>\tShopee</button>" ?>
-    <script>
-      var btn = document.getElementById('btn_home');
-      btn.addEventListener('click', function() {
-        document.location.href = "home.php";
-      });
-    </script>
+    <a class="navbar-brand px-4" href="home.php"><i class='bi bi-handbag'></i> Shopee</a>
   </navbar>
-  <!-- developers -->
-  <section class="vh-100">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center p-3">
-        <div class="col col-lg-6 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem;">
-            <div class="row g-0">
-              <div class="col-md-4 gradient-2 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/nicholas.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
-                <h5>Nicholas Bay</h5>
-                <p>Diploma of Computer Engineering</p>
-                <i class="far fa-edit mb-5"></i>
-              </div>
-              <div class="col-md-8 bg-dark text-white">
-                <div class="card-body p-4">
-                  <h5>Information</h5>
-                  <hr class="mt-0 mb-4">
-                  <div class="row pt-1">
-                    <div class="col-6 mb-3">
-                      <h6>Email</h6>
-                      <p class="text-muted">nicholas.20@ichat.sp.edu.sg</p>
-                    </div>
-                    <div class="col-6 mb-3">
-                      <h6>Admission Number</h6>
-                      <p class="text-muted">P2002257</p>
+  <div class="container py-5 h-100 vh-100">
+    <?php
+      $names = array('Nicholas Bay', 'Chung Hong Wei', 'Ephraim Yee', 'Eugene Quek');
+      $image = array('nicholas', 'hongwei', 'ephraim', 'eugene');
+      $email = array('nicholas.20@ichat.sp.edu.sg', 'test', 'test', 'test');
+      $admNo = array('P2002257', 'test', 'test', 'test');
+      for ($i = 0, $j = 0; $i < 4; $i++, $j++) {
+        if ($j == 0 || $j == 2) echo "<div class='row d-flex justify-content-center align-items-center p-3'>";
+        echo "
+          <div class='col col-lg-6 mb-4 mb-lg-0'>
+            <div class='card mb-3' style='border-radius: .5rem;'>
+              <div class='row g-0'>
+                <div class='col-md-4 gradient-2 text-center text-white' style='border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;'>
+                  <img src='../assets/$image[$i].jpg' alt='Avatar' class='img-fluid my-5' style='width: 100px;' />
+                  <h5>$names[$i]</h5>
+                  <p>Diploma of Computer Engineering</p>
+                  <i class='far fa-edit mb-5'></i>
+                </div>
+                <div class='col-md-8 bg-dark text-white'>
+                  <div class='card-body p-4'>
+                    <h5>Information</h5>
+                    <hr class='mt-0 mb-4'>
+                    <div class='row pt-1'>
+                      <div class='col-6 mb-3'>
+                        <h6>Email</h6>
+                        <p class='text-muted'>$email[$i]</p>
+                      </div>
+                      <div class='col-6 mb-3'>
+                        <h6>Admission Number</h6>
+                        <p class='text-muted'>$admNo[$i]</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col col-lg-6 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem;">
-            <div class="row g-0">
-              <div class="col-md-4 gradient-2 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/eugene.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
-                <h5>Eugene Quek</h5>
-                <p>Diploma of Computer Engineering</p>
-                <i class="far fa-edit mb-5"></i>
-              </div>
-              <div class="col-md-8 bg-dark text-white">
-                <div class="card-body p-4">
-                  <h5>Information</h5>
-                  <hr class="mt-0 mb-4">
-                  <div class="row pt-1 align-self-center">
-                    <div class="col-6 mb-3">
-                      <h6>Email</h6>
-                      <p class="text-muted">eugeneq.20@ichat.sp.edu.sg</p>
-                    </div>
-                    <div class="col-6 mb-3">
-                      <h6>Admission Number</h6>
-                      <p class="text-muted">P2002228</p>
-                    </div>
+        ";
+        if ($j == 1 || $j == 3) echo "</div>";
+      }
+    ?>
+  <div class="container py-3 h-100 vh-100">
+    <div class="row d-flex justify-content-center align-items-center p-5">
+      <iframe width="350px" height="275px" src="../assets/Baking Mayhem-Full Version.mp4"></iframe>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center p-5">
+      <div class="col col-lg-8 mb-4 mb-lg-0">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img src="../assets/splogo.png" alt="Avatar" class="img-fluid my-5" style="width: 200px; height: 200px;" />
+              <h4>About Us</h4>
+              <h5>DCPE/FT/2B/01</h5>
+              <i class="far fa-edit mb-5"></i>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h5>Information</h5>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Company Motto</h6>
+                    <p class="text-muted">With SP, It's So Possible.</p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row d-flex justify-content-center align-items-center p-3">
-        <div class="col col-lg-6 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem;">
-            <div class="row g-0">
-              <div class="col-md-4 gradient-2 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/ephraim.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
-                <h5>Ephraim Yee</h5>
-                <p>Diploma of Computer Engineering</p>
-                <i class="far fa-edit mb-5"></i>
-              </div>
-              <div class="col-md-8 bg-dark text-white">
-                <div class="card-body p-4">
-                  <h5>Information</h5>
-                  <hr class="mt-0 mb-4">
-                  <div class="row pt-1">
-                    <div class="col-6 mb-3">
-                      <h6>Email</h6>
-                      <p class="text-muted">ephraimyee.20@ichat.sp.edu.sg</p>
-                    </div>
-                    <div class="col-6 mb-3">
-                      <h6>Admission Number</h6>
-                      <p class="text-muted">P2032315</p>
-                    </div>
-                  </div>
+                <div class="row pt-1">
+                  <h6>Purpose of Website</h6>
+                  <p class="text-muted">To offer consumers a smooth shopping experience and
+                    give them transparency in their payments.</p>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col col-lg-6 mb-4 mb-lg-0">
-          <div class="card mb-3" style="border-radius: .5rem;">
-            <div class="row g-0">
-              <div class="col-md-4 gradient-2 text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/hongwei.jpg" alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
-                <h5>Chung Hong Wei</h5>
-                <p>Diploma of Computer Engineering</p>
-                <i class="far fa-edit mb-5"></i>
-              </div>
-              <div class="col-md-8 bg-dark text-white">
-                <div class="card-body p-4">
-                  <h5>Information</h5>
-                  <hr class="mt-0 mb-4">
-                  <div class="row pt-1 align-self-center">
-                    <div class="col-6 mb-3">
-                      <h6>Email</h6>
-                      <p class="text-muted">hongweic09.20@ichat.sp.edu.sg</p>
-                    </div>
-                    <div class="col-6 mb-3">
-                      <h6>Admission Number</h6>
-                      <p class="text-muted">P2002372
-                    </div>
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Location</h6>
+                    <p class="text-muted">500 Dover Road, Singapore</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <img src="../assets/SP_Location.jpg" alt="Map" class="img-fluid my-0" style="width: 230px;" />
                   </div>
                 </div>
               </div>
@@ -149,59 +106,7 @@
         </div>
       </div>
     </div>
-  </section>
-  <!-- website -->
-  <section class="vh-100">
-    <div class="container py-3 h-100">
-      <div class="row d-flex justify-content-center align-items-center p-5">
-        <iframe width="350px" height="275px" src="../assets/Baking Mayhem-Full Version.mp4"></iframe>
-      </div>
-      <div class="row d-flex justify-content-center align-items-center p-5">
-        <div class="col col-lg-8 mb-4 mb-lg-0">
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                <img src="../assets/animegirl.jpeg" alt="Avatar" class="img-fluid my-5" style="width: 130px;" />
-                <h4>About Us</h4>
-                <h5>DCPE/FT/2B/01</h5>
-                <i class="far fa-edit mb-5"></i>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body p-4">
-                  <h5>Information</h5>
-                  <hr class="mt-0 mb-4">
-                  <div class="row pt-1">
-                    <div class="col-6 mb-3">
-                      <h6>Leader</h6>
-                      <p class="text-muted">Nicholas Bay</p>
-                    </div>
-                    <div class="col-6 mb-3">
-                      <h6>Company Motto</h6>
-                      <p class="text-muted">With SP, It's So Possible.</p>
-                    </div>
-                  </div>
-                  <div class="row pt-1">
-                    <h6>Purpose of Website</h6>
-                    <p class="text-muted">To offer consumers a smooth shopping experience and
-                      give them transparency in their payments.</p>
-                  </div>
-                  <div class="row pt-1">
-                    <div class="col-6 mb-3">
-                      <h6>Location</h6>
-                      <p class="text-muted">500 Dover Road, Singapore</p>
-                    </div>
-                    <div class="col-6 mb-3">
-                      <img src="../assets/SP_Location.jpg" alt="Map" class="img-fluid my-0" style="width: 230px;" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
   <?php include 'footer.php' ?>
 </body>
 

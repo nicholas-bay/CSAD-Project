@@ -1,12 +1,11 @@
 <?php 
   session_start();
   $_SESSION['username'] = 'User';
-  $_SESSION['pointer'] = NULL;
+  $_SESSION['searchpointer'] = NULL;
   $_SESSION['product_count'] = array();
-  $_SESSION['current-product-count'] = NULL;
   $_SESSION['login_valid'] = "";
   $_SESSION['userstate'] = NULL;
   $_SESSION['invoice'] = NULL;
-  echo '<script>sessionStorage.clear(); count = 0;</script>';
+  echo '<script>count = 0;</script>';
   header('Location: home.php');
 ?>
