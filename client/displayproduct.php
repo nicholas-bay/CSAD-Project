@@ -21,7 +21,7 @@
           echo "
             <div class='col-sm-3'>
               <div class='card border-4 border-dark home-card bg-dark' style='" . $_SESSION['color'] . "'>
-                <img class='img-thumnail' src='data:image/jpeg;base64," . base64_encode($row["image"]) . "'>
+                <img class='img-thumnail' src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' id='".$row['name']."'>
                 <div class='card-body'>
                   <h5 class='card-title'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                   <h5 class='card-text'>" . $row['description'] . "</h5>

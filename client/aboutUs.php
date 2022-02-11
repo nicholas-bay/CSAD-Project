@@ -17,29 +17,29 @@
   <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 </head>
 
-<body class='pt-5 pb-5 gradient-argon'>
+<body class='pt-5 pb-5 gradient-aboutus'>
   <navbar class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
     <a class="navbar-brand px-4" href="home.php"><i class='bi bi-handbag'></i> Shopee</a>
   </navbar>
   <div class="container py-5 h-100 vh-100">
     <?php
-      $names = array('Nicholas Bay', 'Chung Hong Wei', 'Ephraim Yee', 'Eugene Quek');
-      $image = array('nicholas', 'hongwei', 'ephraim', 'eugene');
-      $email = array('nicholas.20@ichat.sp.edu.sg', 'test', 'test', 'test');
-      $admNo = array('P2002257', 'test', 'test', 'test');
-      for ($i = 0, $j = 0; $i < 4; $i++, $j++) {
-        if ($j == 0 || $j == 2) echo "<div class='row d-flex justify-content-center align-items-center p-3'>";
-        echo "
+    $names = array('Nicholas Bay', 'Chung Hong Wei', 'Ephraim Yee', 'Eugene Quek');
+    $image = array('nicholas', 'hongwei', 'ephraim', 'eugene');
+    $email = array('nicholas.20@ichat.sp.edu.sg', 'hongweic09.20@ichat.sp.edu.sg', 'ephraimyee.20@ichat.sp.edu.sg', 'eugeneq.20@ichat.sp.edu.sg');
+    $admNo = array('P2002257', 'P2002372', 'P2032315', 'P2002228');
+    for ($i = 0, $j = 0; $i < 4; $i++, $j++) {
+      if ($j == 0 || $j == 2) echo "<div class='row d-flex justify-content-center align-items-center p-3'>";
+      echo "
           <div class='col col-lg-6 mb-4 mb-lg-0'>
             <div class='card mb-3' style='border-radius: .5rem;'>
               <div class='row g-0'>
-                <div class='col-md-4 gradient-2 text-center text-white' style='border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;'>
+                <div class='col-md-4 gradient-darkocean text-center' style='border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;'>
                   <img src='../assets/$image[$i].jpg' alt='Avatar' class='img-fluid my-5' style='width: 100px;' />
                   <h5>$names[$i]</h5>
                   <p>Diploma of Computer Engineering</p>
                   <i class='far fa-edit mb-5'></i>
                 </div>
-                <div class='col-md-8 bg-dark text-white'>
+                <div class='col-md-8 text-white color-dimblack'>
                   <div class='card-body p-4'>
                     <h5>Information</h5>
                     <hr class='mt-0 mb-4'>
@@ -59,18 +59,18 @@
             </div>
           </div>
         ";
-        if ($j == 1 || $j == 3) echo "</div>";
-      }
+      if ($j == 1 || $j == 3) echo "</div>";
+    }
     ?>
   <div class="container py-3 h-100 vh-100">
     <div class="row d-flex justify-content-center align-items-center p-5">
-      <iframe width="350px" height="275px" src="../assets/Baking Mayhem-Full Version.mp4"></iframe>
+      <iframe width="480px" height="300px" src="../assets/video.mp4"></iframe>
     </div>
     <div class="row d-flex justify-content-center align-items-center p-5">
       <div class="col col-lg-8 mb-4 mb-lg-0">
-        <div class="card mb-3">
+        <div class="card mb-3" style='border-radius: .5rem;'>
           <div class="row g-0">
-            <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+            <div class="col-md-4 gradient-darkocean text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
               <img src="../assets/splogo.png" alt="Avatar" class="img-fluid my-5" style="width: 200px; height: 200px;" />
               <h4>About Us</h4>
               <h5>DCPE/FT/2B/01</h5>

@@ -5,7 +5,7 @@
   background: linear-gradient(to right bottom, #3E4146, #BDD3F6)
 }
 .gradient-lawrencium {
-  background: linear-gradient(to right top, #0f0c29, #302b63, #FFFFFF)
+  background: linear-gradient(to right top, #FFFFFF, #302b63, #0f0c29)
 }
 .gradient-coolsky {
   background: linear-gradient(to right top, #FFFFFF, #6DD5FA, #2980B9)
@@ -13,12 +13,12 @@
 .gradient-argon {
   background: linear-gradient(to right bottom, #03001e, #7303c0, #FFFFFF, #fdeff9);
 }
-.gradient-aboutus {
-  height: 3000px;
-  background: linear-gradient(55deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 85%);
+.gradient-celestial {
+  background: linear-gradient(to right bottom, #C33764, #1D2671);
 }
-.gradient-4 {
-  background: linear-gradient(to right bottom, #03090B,#81AEF9)
+.gradient-aboutus {
+  height: 1850px;
+  background: linear-gradient(to right bottom, #03001e 0%, #7303c0 51%, #FFFFFF 85%);
 }
 .color-dimblack {
   background-color: #353537;
