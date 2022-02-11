@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
 </head>
 
-<body class='pt-5 pb-5 gradient-2'>
+<body class='pt-5 pb-5 gradient-argon'>
   <!-- header -->
   <navbar class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
     &emsp;&emsp;<?php echo "<button id='btn_home' style='color: white; background-color: #212121; border: none;'>
