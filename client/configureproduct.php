@@ -6,26 +6,28 @@
   <div class="offcanvas-body">
     <div class='container'>
       <div class='row d-flex justify-content-center align-items-center p-3'>
-        <div class='card gradient-2' style='border-radius: .5rem;'>
+        <div class='card bor-rad'>
           <form method="POST" action="../server/products.php" enctype="multipart/form-data">
             <div class='row text-center card-body'>
-              <label class='form-label text-white'>Name</label>
+              <label class='form-label'>Name</label>
               <input type="text" name="product-name" required />
             </div>
+            <div class='row card-body'>
+              <div class='col-6'>
+                <label class='form-label'>Price</label>
+                <input type="number" name="product-price" required />
+              </div>
+              <div class='col-6'>
+                <label class='form-label'>Count</label>
+                <input type="number" name="product-count" required />
+              </div>
+            </div>
             <div class='row text-center card-body'>
-              <label class='form-label text-white'>Description</label>
+              <label class='form-label'>Description</label>
               <textarea name="product-description" rows='3' required></textarea>
             </div>
-            <div class='row text-center card-body'>
-              <label class='form-label text-white'>Price</label>
-              <input type="number" name="product-price" required />
-            </div>
-            <div class='row text-center card-body'>
-              <label class='form-label text-white'>Count</label>
-              <input type="number" name="product-count" required />
-            </div>
             <div class='row text-center card-body justify-content-center'>
-              <label class='form-label text-white'>Image</label>
+              <label class='form-label'>Image</label>
               <input type="file" class='form-control' onchange="previewFile()" name="product-image" accept="image/*" required><br>
               <img id="product-image-preview" style="width: 200px; height: 200px;" />
               <script>
@@ -40,10 +42,10 @@
                 }
               </script>
             </div>
-            <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='addupdate' value="Add / Update">
+            <input type='submit' class='btn btn-cus' name='addupdate' value="Add / Update">
           </form>
           <form method="POST" action="../server/products.php" enctype="multipart/form-data">
-            <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='delete' value="Delete">
+            <input type='submit' class='btn btn-cus' name='delete' value="Delete">
           </form>
         </div>
       </div>

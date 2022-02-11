@@ -6,6 +6,7 @@
   $_SESSION['current-product-count'] = NULL;
   $_SESSION['login_valid'] = "";
   $_SESSION['userstate'] = NULL;
+  $_SESSION['invoice'] = NULL;
   echo '<script>sessionStorage.clear(); count = 0;</script>';
   header('Location: home.php');
 ?>

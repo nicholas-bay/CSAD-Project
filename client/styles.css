@@ -8,7 +8,7 @@
   background: linear-gradient(to right top, #0f0c29, #302b63, #FFFFFF)
 }
 .gradient-coolsky {
-  background: linear-gradient(to right bottom, #2980B9, #6DD5FA, #FFFFFF)
+  background: linear-gradient(to right top, #FFFFFF, #6DD5FA, #2980B9)
 }
 .gradient-argon {
   background: linear-gradient(to right bottom, #03001e, #7303c0, #FFFFFF, #fdeff9);
@@ -18,6 +18,9 @@
 }
 .gradient-4 {
   background: linear-gradient(to right bottom, #03090B,#81AEF9)
+}
+.color-dimblack {
+  background-color: #353537;
 }
 #navmenu li {
   margin-left: 20px;
@@ -86,7 +89,14 @@ body {
   width: 18rem;
   margin: 30px;
 }
-btn-rad {
+.btn-cus {
   border-radius: 12px;
   background: linear-gradient(to right bottom, #3E4146, #BDD3F6)
+}
+.bor-rad {
+  border-radius: 12px;
+}
+.img-cart {
+  width: 100px;
+  height: 100px;
 }

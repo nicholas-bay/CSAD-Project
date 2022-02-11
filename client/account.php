@@ -4,40 +4,21 @@
   }
 </style>
 
-<?php 
+<?php
 $errMsg = $_SESSION['login_valid'];
 $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
 ?>
 
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="account">
+<div class="offcanvas offcanvas-end gradient-coolsky" data-bs-scroll="true" tabindex="-1" id="account">
   <div class="offcanvas-header">
     <h1 class="offcanvas-title">Account</h1>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
   </div>
-  <div class="offcanvas-body">
+  <div class="offcanvas-body text-white">
     <div class='container'>
       <div class='row d-flex justify-content-center align-items-center p-3'>
-        <div class='card' style='border-radius: .5rem;'>
+        <div class='card color-dimblack bor-rad'>
           <span class="err" style="margin-top: 22px;">* Required Field</span>
-          <!-- this form get error, always redirect to products.php -->
-          <form method='POST' action='../server/users.php' hidden>
-            <div class='row text-center'>
-              <div class='card-body'>
-                <input type='text' name='username' placeholder='Username' required disabled hidden />
-              </div>
-            </div>
-            <div class='row text-center'>
-              <div class='card-body'>
-                <input type='text' name='password' placeholder='Password' required disabled hidden />
-              </div>
-            </div>
-            <div class='row text-center'>
-              <div class='card-body'>
-                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='login' value='Login' disabled hidden />
-                <input type='submit' class='btn btn-warning' style='border-radius: 12px;' name='signup' value='Sign Up' disabled hidden />
-              </div>
-            </div>
-          </form>
           <form method='POST' action='../server/users.php'>
             <div class='row text-center'>
               <div class='card-body'>
@@ -53,15 +34,15 @@ $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACH
               <span class="err"><?php echo $errMsg; ?></span>
               <?php $_SESSION['login_valid'] = ""; ?>
               <div class='card-body'>
-                <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='login' value='Login'>
-                <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='signup' value='Sign Up'>
+                <input type='submit' class='btn btn-cus' name='login' value='Login'>
+                <input type='submit' class='btn btn-cus' name='signup' value='Sign Up'>
               </div>
             </div>
           </form>
           <div class='row text-center'>
             <div class='card-body'>
               <form method='POST' action='../server/users.php'>
-                <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='logout' value='Log Out' <?php if ($_SESSION['username'] == 'User') echo 'disabled'; ?>>
+                <?php if ($_SESSION['username'] != 'User') echo "<input type='submit' class='btn btn-cus' name='logout' value='Log Out'>"; ?>
               </form>
             </div>
           </div>
@@ -69,13 +50,13 @@ $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACH
       </div>
     </div>
     <?php
-      $sql = "SELECT * FROM $tableuser WHERE username = '" . $_SESSION['username'] . "'";
-      $user = $conn->query($sql);
-      while ($row = $user->fetch_assoc()) {
-        echo "
+    $sql = "SELECT * FROM $tableuser WHERE username = '" . $_SESSION['username'] . "'";
+    $user = $conn->query($sql);
+    while ($row = $user->fetch_assoc()) {
+      echo "
         <div class='container'>
           <div class='row d-flex justify-content-center align-items-center p-3'>
-            <div class='card' style='border-radius: .5rem;'>
+            <div class='card color-dimblack bor-rad'>
               <form method='POST' action='../server/users.php'>
                 <div class='row text-center'>
                   <div class='card-body'>
@@ -104,8 +85,8 @@ $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACH
                 </div>
                 <div class='row text-center'>
                   <div class='card-body'>
-                    <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='update' value='Update'>
-                    <input type='submit' class='btn btn-dark' style='border-radius: 12px;' name='delete' value='Delete'>
+                    <input type='submit' class='btn btn-cus' name='update' value='Update'>
+                    <input type='submit' class='btn btn-cus' name='delete' value='Delete'>
                   </div>
                 </div>
               </form>
@@ -113,7 +94,7 @@ $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACH
           </div>
         </div>
       ";
-      }
+    }
     ?>
   </div>
 

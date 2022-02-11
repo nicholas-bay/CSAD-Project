@@ -1,0 +1,6 @@
+buyer has bought:
+
+gfs:	$45
+		Count: 1
+
+Total: $45
