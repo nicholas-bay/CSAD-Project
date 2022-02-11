@@ -12,14 +12,14 @@
               <label class='form-label'>Name</label>
               <input type="text" name="product-name" required />
             </div>
-            <div class='row card-body'>
+            <div class='row text-center card-body'>
               <div class='col-6'>
                 <label class='form-label'>Price</label>
-                <input type="number" name="product-price" required />
+                <input type="number" name="product-price" style='width: 150px;' required />
               </div>
               <div class='col-6'>
                 <label class='form-label'>Count</label>
-                <input type="number" name="product-count" required />
+                <input type="number" name="product-count" style='width: 150px;' required />
               </div>
             </div>
             <div class='row text-center card-body'>
