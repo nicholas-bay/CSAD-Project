@@ -81,15 +81,18 @@
                 <h5>Information</h5>
                 <hr class="mt-0 mb-4">
                 <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>Company Motto</h6>
-                    <p class="text-muted">With SP, It's So Possible.</p>
-                  </div>
+                  <h6>Company Motto</h6>
+                  <p class="text-muted">With SP, It's So Possible.</p>
                 </div>
                 <div class="row pt-1">
                   <h6>Purpose of Website</h6>
                   <p class="text-muted">To offer consumers a smooth shopping experience and
                     give them transparency in their payments.</p>
+                </div>
+                <div class="row pt-1">
+                  <h6>Contact Us</h6>
+                  <p class="text-muted">6775 1133<br>
+                  <a href="mailto:contactus@sp.edu.sg">contactus@sp.edu.sg</a></p>
                 </div>
                 <div class="row pt-1">
                   <div class="col-6 mb-3">
