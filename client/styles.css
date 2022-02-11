@@ -1,8 +1,17 @@
-.gradient-1 {
-  background: linear-gradient(to right bottom, #F6D365, #FDA085)
+.gradient-darkocean {
+  background: linear-gradient(to right bottom, #373B44, #4286f4)
 }
-.gradient-2 {
+.gradient-gradegrey {
   background: linear-gradient(to right bottom, #3E4146, #BDD3F6)
+}
+.gradient-lawrencium {
+  background: linear-gradient(to right top, #0f0c29, #302b63, #FFFFFF)
+}
+.gradient-coolsky {
+  background: linear-gradient(to right bottom, #2980B9, #6DD5FA, #FFFFFF)
+}
+.gradient-argon {
+  background: linear-gradient(to right bottom, #03001e, #7303c0, #FFFFFF, #fdeff9);
 }
 .gradient-3 {
   background: linear-gradient(to right bottom, #2B5EF8, #F3F4F7)
@@ -43,8 +52,8 @@ footer p {
   transform: scale(1.25);
 }
 @-webkit-keyframes greywhite {  
-  0% { background-color: black; }
-  100% { background-color: #A9A9A9; }
+  0% { background-color: #A9A9A9; }
+  100% { background-color: #212121; }
 }
 #blinkingsearch {
   -webkit-animation-name: greywhite;
@@ -70,4 +79,14 @@ body {
   font-family: century-gothic, sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+.home-card {
+  transition: transform .2s;
+  border-radius: .5rem;
+  width: 18rem;
+  margin: 30px;
+}
+btn-rad {
+  border-radius: 12px;
+  background: linear-gradient(to right bottom, #3E4146, #BDD3F6)
 }

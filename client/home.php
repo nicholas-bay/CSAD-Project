@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
   </head>
 
-  <body class='pt-5 pb-5 gradient-3'>
+  <body class='pt-5 pb-5 gradient-argon'>
     <?php include 'header.php'; ?>
     <!-- display products -->
-    <section class=' text-light p-5 text-right text-sm-start'>
-      <div class=" container">
+    <section class='p-5 text-right text-sm-start text-light'>
+      <div class="container">
         <div class="d-flex justify-content-center align-items-center">
           <?php
           $sql = "SELECT * FROM $tableuser where username = '" . $_SESSION['username'] . "'";
@@ -46,17 +46,18 @@
               else $_SESSION['color'] = 'background-color: black';
               echo "
                 <div class='col-sm-3'>
-                  <div class='card bg-dark border-4 border-dark' id='productcard' style='width: 18rem; height: 35rem; margin: 30px;" . $_SESSION['color'] . "'>
-                    <img src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' class='img-thumnail' />
+                  <div class='card border-4 border-dark home-card bg-dark' style='" . $_SESSION['color'] . "'>
+                    <img class='img-thumnail' src='data:image/jpeg;base64," . base64_encode($row["image"]) . "' />
                     <div class='card-body'>
                       <h5 class='card-title'>" . $row['name'] . " ($" . $row['price'] . ")</h5>
                       <h5 class='card-text'>" . $row['description'] . "</h5>
                       <h5 class='card-text'>Remaining stock: " . $row['count'] . " Left</h5>
                       <form method='POST' action='../server/products.php'>
-                        <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>";
-              if ($_SESSION['userstate'] == 'buyer') {
-                echo "<input type='submit' name='add' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Add'></input>";
-                echo "<input type='submit' name='remove' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Remove'></input>";
+                        <input type='hidden' name='product-name' value='" . $row['name'] . "'></input>
+              ";
+              if ($_SESSION['userstate'] == 'buyer' && $row['count'] > 0) {
+                echo "<input type='submit' name='add' class='btn gradient-gradegrey justify content-center' style='border-radius: 12px;' value='Add'></input>";
+                echo "<input type='submit' name='remove' class='btn gradient-gradegrey justify content-center' style='border-radius: 12px;' value='Remove'></input>";
               }
               echo "  <textarea placeholder='Feedback' name='feedback-details'></textarea>
                       <input type='submit' name='feedback' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='FeedBack'></input>

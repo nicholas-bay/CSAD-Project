@@ -37,7 +37,10 @@
           <h3>Total cost: $$total</h3>
           </div>
           <div class='col-8'>
-            <input type='submit' name='order' class='btn btn-warning justify content-center' style='border-radius: 12px;' value='Place Order'></input>
+            <form method='POST' action='../server/products.php'>
+              <input type='submit' name='order' class='btn justify content-center btn-rad' value='Place Order'></input>
+              <input type='submit' name='clearorder' class='btn justify content-center btn-rad' value='Clear Order'></input>
+            </form>
           </div>
       ";
     ?>

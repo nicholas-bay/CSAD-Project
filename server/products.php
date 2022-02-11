@@ -64,5 +64,27 @@
     else echo $conn->error;
     header('Location: ../client/home.php');
     }
+    else if (isset($_POST['order'])) {
+      foreach (array_count_values($_SESSION['product_count']) as $key => $value) {
+        $sql = "
+          SELECT count FROM $tableproduct WHERE name = '$key';
+        ";
+        $result = $conn->query($sql);
+        if (!empty($result) && $result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            $sql = "
+              UPDATE $tableproduct SET count = " . $row['count'] - $value . " WHERE name = '$key'
+            ";
+            if ($conn->query($sql) == TRUE) echo "Successful";
+            else echo $conn->error;
+          }
+        }
+      }
+      // header('Location: ../client/home.php');
+    }
+    else if (isset($_POST['clearorder'])) {
+      $_SESSION['product_count'] = array();
+      header('Location: ../client/home.php');
+    }
   }
 ?>

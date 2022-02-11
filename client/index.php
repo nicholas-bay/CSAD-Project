@@ -3,6 +3,7 @@
   $_SESSION['username'] = 'User';
   $_SESSION['pointer'] = NULL;
   $_SESSION['product_count'] = array();
+  $_SESSION['current-product-count'] = NULL;
   $_SESSION['login_valid'] = "";
   $_SESSION['userstate'] = NULL;
   echo '<script>sessionStorage.clear(); count = 0;</script>';
