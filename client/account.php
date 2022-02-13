@@ -1,9 +1,3 @@
-<style>
-  .err {
-    color: red;
-  }
-</style>
-
 <?php
 $errMsg = $_SESSION['login_valid'];
 $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
